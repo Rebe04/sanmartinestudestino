@@ -6,7 +6,7 @@ import AboutSection from "@/Components/AboutSection.jsx";
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <MainLayout>
-            <Head title="Welcome" />
+            <Head title="Inicio" />
             <Banner/>
             <AboutSection/>
 
