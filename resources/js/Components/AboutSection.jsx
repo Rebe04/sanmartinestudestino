@@ -59,12 +59,12 @@ export default function AboutSection() {
                             <img src={shapeImage} alt="Decorative shape" className="absolute bottom-0 left-0 w-28 h-auto z-10" />
 
                             {/* Imagen pequeña inferior (capa superior) */}
-                            <div className="absolute -bottom-20 md:bottom-0 left-44 w-[40%] h-[100px] md:h-[120px] z-20 rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="absolute bottom-10 md:bottom-0 left-4 right-4 mx-auto w-[40%] sm:w-[30%] md:w-[25%] lg:w-[40%] h-[100px] sm:h-[120px] md:h-[120px] z-20 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src={imageBottomLeft} alt="Paisajes del llano" className="w-full h-full object-cover"/>
                             </div>
 
                             {/* Imagen principal (central con video) */}
-                            <div className="absolute top-24 md:top-20 left-40 md:left-64 w-[60%] md:w-[50%] h-[295px] md:h-[350px] z-10 rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="absolute top-24 md:top-20 right-3 sm:right-28 md:right-36 lg:right-4 w-[60%] sm:w-[30%] md:w-[35%] lg:w-[50%] xl:w-[45%] h-[295px] md:h-[350px] z-10 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src={imageCenter} alt="Cultura de San Martín" className="w-full h-full object-cover"/>
                                 <button onClick={() => setVideoOpen(true)} className="absolute inset-0 flex items-center justify-center group bg-black/20 opacity-70 hover:opacity-100 transition-opacity duration-300">
                                     <div className="w-20 h-20 flex items-center justify-center rounded-full bg-green-600 group-hover:scale-110 transition-transform duration-300">
@@ -74,7 +74,7 @@ export default function AboutSection() {
                             </div>
 
                             {/* Imagen pequeña superior (capa inferior) */}
-                            <div className="absolute top-0 h-[450px] md:h-[360px] left-2 md:left-10 w-[63%] z-0 rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="absolute top-5 h-[400px] md:h-[360px] left-2 sm:left-28 md:left-36 lg:left-24 w-2/3 sm:w-[45%] lg:w-[63%] z-0 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src={imageTopLeft} alt="Folclor llanero" className="w-full h-full object-cover"/>
                             </div>
                         </div>
