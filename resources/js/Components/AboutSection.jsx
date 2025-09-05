@@ -13,7 +13,7 @@ const AboutCard = ({ icon, title, text }) => (
             <div className="w-full h-full flex items-center text-gray-800 justify-center rounded-full bg-white shadow-md z-10 relative">
                 {icon}
             </div>
-            <div className="absolute inset-0 w-full h-full -left-1 -top-1 rounded-full bg-green-700 transform z-0 transition-transform duration-700 ease-out group-hover:-translate-x-1 group-hover:-top-2"></div>
+            <div className="absolute inset-0 w-full h-full -left-1 -top-1 rounded-full bg-smd-green transform z-0 transition-transform duration-700 ease-out group-hover:-translate-x-1 group-hover:-top-2"></div>
         </div>
         <div>
             <h4 className="text-xl font-bold text-gray-800">{title}</h4>
@@ -103,9 +103,9 @@ export default function AboutSection() {
                                 />
                             </div>
 
-                            <a href="#" className="inline-flex items-center gap-2 bg-green-600 text-white font-bold px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-gray-900 transition-colors duration-300">
+                            <a href="#" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
                                 Conoce más de nuestra historia
-                                <ChevronRightIcon className="w-5 h-5" />
+                                <ChevronRightIcon className="w-5 h-5 animate-bounce-horizontal"/>
                             </a>
                         </div>
                     </div>

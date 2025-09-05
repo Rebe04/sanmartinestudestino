@@ -6,6 +6,7 @@ import Preloader from "@/Components/Preloader.jsx";
 import Footer from "@/Components/Footer.jsx";
 import SideMenu from "@/Components/SideMenu.jsx";
 import Navbar from "@/Components/Navbar.jsx";
+import Lenis from "@studio-freight/lenis";
 
 export default function MainLayout({ children }) {
     const [isLoading, setIsLoading] = useState(true);
@@ -14,6 +15,18 @@ export default function MainLayout({ children }) {
     const [sideMenuOpen, setSideMenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
 
     useEffect(() => {
         const fadeTimer = setTimeout(() => setIsFadingOut(true), 1500);

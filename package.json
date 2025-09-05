@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "@heroicons/react": "^2.2.0",
+        "@studio-freight/lenis": "^1.0.42",
         "swiper": "^11.2.10"
     }
 }
