@@ -46,7 +46,7 @@ export default function RoutesSection() {
 
     return (
         <>
-        <section className="bg-gray-50 py-smd-152 w-full" style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
+        <section className="bg-gray-50 py-smd-96 w-full" style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
             <div className="mx-auto px-1 md:px-4 w-full max-w-smd-max">
                 <div className="w-full flex flex-col px-smd-24 md:flex-row md:content-center justify-between md:items-center">
                     <div className="mb-8 lg:w-1/2 md:pr-smd-24">
@@ -95,7 +95,7 @@ export default function RoutesSection() {
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-center lg:justify-end w-full mt-smd-64 mb-smd-48">
+                <div className="flex justify-center lg:justify-end w-full mt-smd-64">
                     <a href="#" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
                         Explora todas nuestras rutas
                         <ChevronRightIcon className="w-5 h-5 animate-bounce-horizontal" />
