@@ -15,6 +15,11 @@ class PostCategory extends Model
         'slug',
     ];
 
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     //    Relación Polimorfica
     public function image()
     {

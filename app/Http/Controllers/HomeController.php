@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post; // Asegúrate de importar tu modelo Post
+use App\Models\Post;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,8 +40,6 @@ class HomeController extends Controller
                 ];
             });
 
-
-        // --- Renderizamos la página Welcome y le pasamos todos los datos ---
         return Inertia::render('Welcome', [
             'posts' => $posts,
             'canLogin' => Route::has('login'),

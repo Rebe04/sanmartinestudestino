@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostCategoryResource;
 use App\Models\PostCategory;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PostCategoryController extends Controller
 {
     public function index()
     {
-        return PostCategory::all();
+        return Inertia::render('PostCategories/Index', [
+            'postsCategories' => PostCategory::paginate(10)
+        ]);
     }
 
     public function store(Request $request)
@@ -24,7 +28,12 @@ class PostCategoryController extends Controller
 
     public function show(PostCategory $postCategory)
     {
-        return $postCategory;
+        $postCategory->load('image', 'posts');
+
+
+        return Inertia::render('PostCategories/Show', [
+            'postCategory' => new PostCategoryResource($postCategory),
+        ]);
     }
 
     public function update(Request $request, PostCategory $postCategory)

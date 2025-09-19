@@ -9,6 +9,7 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\FoodCategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostCategoryController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -45,6 +46,10 @@ Route::get('/routes/{route}', [RouteController::class, 'show'])->name('routes.sh
 // -- Rutas para Posts --
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
+
+// -- Rutas para PostCategories --
+Route::get('/post-categories', [PostCategoryController::class, 'index'])->name('post_categories.index');
+Route::get('/post-categories/{post_category}', [PostCategoryController::class, 'show'])->name('post_categories.show');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
