@@ -66,9 +66,9 @@ export default function Index({post, related, post_category}) {
                                 <ul>
                                     {relatedPosts.map((post, index) => (
                                         <li className="p-smd-16 mt-smd-8 rounded-lg" key={index}>
-                                            <Link className="flex group items-center gap-smd-16" href={route('posts.show', post)}>
-                                                <div className="w-smd-104 rounded-xl overflow-hidden h-smd-104">
-                                                    <img className="h-full object-cover object-center" src={post.image.url} alt={post.name}/>
+                                            <Link className="flex group items-center" href={route('posts.show', post)}>
+                                                <div className="w-smd-184 h-smd-96 rounded-xl mr-smd-16 overflow-hidden">
+                                                    <img className="w-full h-full object-cover" src={post.image.url} alt={post.name}/>
                                                 </div>
                                                 <div>
                                                     <h3 className="text-smd-dark text-xl font-second font-bold group-hover:text-smd-soft-green">
