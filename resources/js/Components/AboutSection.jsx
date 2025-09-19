@@ -26,7 +26,7 @@ const AboutCard = ({ icon, title, text }) => (
 // --- Componente del Popup de Video ---
 const VideoPopup = ({ videoId, onClose }) => (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm animate-fade-in" onClick={onClose}>
-        <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg shadow-xl" onClick={e => e.stopPropagation()}>
+        <div className="relative w-1/2 max-w-3xl aspect-video bg-black rounded-lg shadow-xl" onClick={e => e.stopPropagation()}>
             <button onClick={onClose} className="absolute -top-4 -right-4 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full text-black hover:bg-gray-200">
                 <XMarkIcon className="w-6 h-6" />
             </button>
@@ -59,12 +59,12 @@ export default function AboutSection() {
                             <img src={shapeImage} alt="Decorative shape" className="absolute bottom-0 left-0 w-28 h-auto z-10" />
 
                             {/* Imagen pequeña inferior (capa superior) */}
-                            <div className="absolute bottom-10 md:bottom-0 left-4 right-4 mx-auto w-[40%] sm:w-[30%] md:w-[25%] lg:w-[40%] h-[100px] sm:h-[120px] md:h-[120px] z-20 rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="absolute bottom-10 md:bottom-0 left-4 lg:left-smd-200 right-4 mx-auto w-[40%] sm:w-[30%] md:w-[25%] lg:w-[50%] xl:w-[28%] h-[100px] sm:h-[120px] md:h-[120px] z-20 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src={imageBottomLeft} alt="Paisajes del llano" className="w-full h-full object-cover"/>
                             </div>
 
                             {/* Imagen principal (central con video) */}
-                            <div className="absolute top-24 md:top-20 right-3 sm:right-28 md:right-36 lg:right-4 w-[60%] sm:w-[30%] md:w-[35%] lg:w-[50%] xl:w-[45%] h-[295px] md:h-[350px] z-10 rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="absolute top-24 md:top-20 right-3 sm:right-28 md:right-36 lg:right-4 w-[60%] sm:w-[30%] md:w-[35%] lg:w-[50%] xl:w-[37%] h-[295px] md:h-[350px] z-10 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src={imageCenter} alt="Cultura de San Martín" className="w-full h-full object-cover"/>
                                 <button onClick={() => setVideoOpen(true)} className="absolute inset-0 flex items-center justify-center group bg-black/20 opacity-70 hover:opacity-100 transition-opacity duration-300">
                                     <div className="w-20 h-20 flex items-center justify-center rounded-full bg-green-600 group-hover:scale-110 transition-transform duration-300">
@@ -74,13 +74,13 @@ export default function AboutSection() {
                             </div>
 
                             {/* Imagen pequeña superior (capa inferior) */}
-                            <div className="absolute top-5 h-[400px] md:h-[360px] left-2 sm:left-28 md:left-36 lg:left-24 w-2/3 sm:w-[45%] lg:w-[63%] z-0 rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="absolute top-5 h-[400px] md:h-[360px] left-2 sm:left-28 md:left-36 lg:left-smd-104 xl:left-smd-232 w-2/3 sm:w-[45%] lg:w-[55%] xl:w-[47%] z-0 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src={imageTopLeft} alt="Folclor llanero" className="w-full h-full object-cover"/>
                             </div>
                         </div>
 
                         {/* Columna de Contenido */}
-                        <div className="pt-16 px-4 md:pt-0 md:pt-0 lg:pl-12">
+                        <div className="pt-16 px-4 md:pt-0 lg:pl-12">
                             <div className="mb-8" >
                                 <span className="text-green-600 text-2xl" style={{ fontFamily: 'Poppins, cursive' }}>
                                     Nuestra Esencia

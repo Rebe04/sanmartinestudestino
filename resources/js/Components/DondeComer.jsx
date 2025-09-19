@@ -87,7 +87,7 @@ export default function () {
                             </h2>
                         </div>
                         {/* Contenedor para las flechas de navegación */}
-                        <div className="flex items-center gap-3">
+                        <div className="flex mx-auto md:mx-0 items-center gap-3">
                             <button className="gastronomia-prev-arrow p-3 rounded-full bg-gray-700 hover:bg-green-600 transition-colors disabled:opacity-50">
                                 <ChevronLeftIcon className="w-6 h-6 text-white" />
                             </button>

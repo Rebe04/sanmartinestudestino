@@ -66,10 +66,10 @@ export default function Footer() {
             <img className="absolute top-1/2 left-[1%] -translate-y-1/2 opacity-20 hidden lg:block" src={planeImage} alt="" />
             <img className="absolute top-1/2 right-[1%] -translate-y-1/2 opacity-20 hidden lg:block" src={treeImage} alt="" />
 
-            <div className="relative z-10">
+            <div className="relative z-10 px-smd-24 md:px-0">
                 {/* Sección Superior de Contacto */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-                    <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8">
+                    <div className="flex flex-wrap md:items-center md:justify-center lg:justify-between gap-8">
                         <ContactInfoItem
                             icon={<MapPinIcon className="w-8 h-8"/>}
                             title="Ubicación"

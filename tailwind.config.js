@@ -12,7 +12,7 @@ export default {
 
     theme: {
         maxWidth: {
-            "smd-max": "1280px",
+            "smd-max": "1320px",
             "smd-300": "300px",
         },
         extend: {
@@ -103,7 +103,23 @@ export default {
                 "smd-424": "424px",
                 "smd-432": "432px",
                 "smd-440": "440px",
+                "smd-448": "448px",
+                "smd-456": "456px",
+                "smd-464": "464px",
+                "smd-472": "472px",
+                "smd-480": "480px",
+                "smd-488": "488px",
+                "smd-496": "496px",
+                "smd-504": "504px",
+                "smd-512": "512px",
                 "smd-518": "518px",
+                "smd-520": "520px",
+                "smd-528": "528px",
+                "smd-536": "536px",
+                "smd-544": "544px",
+                "smd-552": "552px",
+                "smd-560": "560px",
+                "smd-568": "568px",
                 "smd-592": "596px",
                 "smd-600": "600px",
                 "smd-608": "608px",

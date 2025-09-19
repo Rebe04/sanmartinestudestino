@@ -1,18 +1,50 @@
 <?php
 
+use App\Http\Controllers\EventCategoryController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\FoodCategoryController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+
+// -- Rutas para Events --
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
+Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
+
+// -- Rutas para EventCategories --
+Route::get('/event-categories', [EventCategoryController::class, 'index'])->name('events.index');
+Route::get('/event-categories/{event_category}', [EventCategoryController::class, 'show'])->name('events.show');
+
+// -- Rutas para FoodCategories --
+Route::get('/food-categories', [FoodCategoryController::class, 'index'])->name('events.index');
+Route::get('/food-categories/{event_category}', [FoodCategoryController::class, 'show'])->name('events.show');
+
+// -- Rutas para Hotels --
+Route::get('/hotels', [HotelController::class, 'index'])->name('hotels.index');
+Route::get('/hotels/{hotel}', [HotelController::class, 'show'])->name('hotels.show');
+
+// -- Rutas para Places --
+Route::get('/places', [PlaceController::class, 'index'])->name('places.index');
+Route::get('/places/{place}', [PlaceController::class, 'show'])->name('places.show');
+
+// -- Rutas para Restaurants --
+Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
+Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
+
+// -- Rutas para Routes --
+Route::get('/routes', [RouteController::class, 'index'])->name('routes.index');
+Route::get('/routes/{route}', [RouteController::class, 'show'])->name('routes.show');
+
+// -- Rutas para Posts --
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
