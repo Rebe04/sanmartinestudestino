@@ -1,1 +1,0 @@
-import{j as i}from"./app-MKgISDRj.js";import{M as n}from"./MainLayout-BETBo6FH.js";import"./NavLink-CnlMsrUa.js";import"./transition-DVIWW6FK.js";function o({event_categories:s}){return i.jsx(n,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),i.jsx("ul",{children:s.data.map(r=>i.jsx("li",{children:r.name},r.id))})]})})}export{o as default};
