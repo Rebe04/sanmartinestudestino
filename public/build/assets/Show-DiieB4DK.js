@@ -1,1 +1,0 @@
-import{j as i}from"./app-pGop85pV.js";import{M as t}from"./MainLayout-Bvt_kPtS.js";import"./NavLink-urpEPUGV.js";import"./transition-CsCsCRzq.js";function a({place:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{a as default};

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\PostCategoryResource;
+use App\Http\Resources\PostResource;
+use App\Models\Post;
 use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -28,10 +30,13 @@ class PostCategoryController extends Controller
 
     public function show(PostCategory $postCategory)
     {
-        $postCategory->load('image', 'posts');
+        $posts = Post::where('post_category_id', $postCategory->id)
+            ->with(['image', 'user'])
+            ->get();
 
 
         return Inertia::render('PostCategories/Show', [
+            'posts' => PostResource::collection($posts),
             'postCategory' => new PostCategoryResource($postCategory),
         ]);
     }

@@ -1,1 +1,0 @@
-import{j as i}from"./app-pGop85pV.js";import{M as e}from"./MainLayout-Bvt_kPtS.js";import"./NavLink-urpEPUGV.js";import"./transition-CsCsCRzq.js";function m({posts:s}){return i.jsx(e,{children:i.jsxs("div",{className:"min-h-screen",children:[i.jsx("h1",{children:"Lista de Posts"}),i.jsx("ul",{children:s.data.map(r=>i.jsx("li",{children:r.name},r.id))})]})})}export{m as default};

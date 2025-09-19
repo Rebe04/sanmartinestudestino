@@ -1,1 +1,0 @@
-import{j as r}from"./app-pGop85pV.js";import{M as t}from"./MainLayout-Bvt_kPtS.js";import"./NavLink-urpEPUGV.js";import"./transition-CsCsCRzq.js";function m({post:i}){return r.jsx(t,{children:r.jsxs("div",{children:[r.jsx("h1",{children:"Post"}),JSON.stringify(i,null,2)]})})}export{m as default};

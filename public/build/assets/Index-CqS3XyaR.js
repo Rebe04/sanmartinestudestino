@@ -1,0 +1,1 @@
+import{j as i}from"./app-BBXTZmwR.js";import{M as s}from"./MainLayout-BwwhnykF.js";import"./NavLink-xvd-8B1S.js";import"./transition-Dy3JwK35.js";function o({hotels:n}){return i.jsx(s,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),i.jsx("ul",{children:n.data.map(r=>i.jsx("li",{children:r.name},r.id))})]})})}export{o as default};

@@ -1,1 +1,0 @@
-import{j as i}from"./app-pGop85pV.js";import{M as n}from"./MainLayout-Bvt_kPtS.js";import"./NavLink-urpEPUGV.js";import"./transition-CsCsCRzq.js";function a({restaurants:e}){return i.jsx(n,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),i.jsx("ul",{children:e.data.map(r=>i.jsx("li",{children:r.name},r.id))})]})})}export{a as default};

@@ -23,11 +23,7 @@ class PostResource extends JsonResource
             'content' => $this->content,
             'status' => $this->status,
             'created_at_formatted' => $this->created_at->translatedFormat('d M Y'),
-
-            // 3. También es buena práctica incluir la fecha original por si la necesitas
             'created_at' => $this->created_at,
-
-            // 4. Así es como incluyes relaciones cargadas
             'image' => new ImageResource($this->whenLoaded('image')),
             'user' => new UserResource($this->whenLoaded('user')),
             'category' => new PostCategoryResource($this->whenLoaded('postCategory')),

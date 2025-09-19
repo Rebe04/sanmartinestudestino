@@ -26,7 +26,7 @@ class PostCategory extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    public function post() {
+    public function posts() {
         return $this->hasMany(Post::class);
     }
 }
