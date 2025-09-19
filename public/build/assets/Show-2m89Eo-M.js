@@ -1,1 +1,0 @@
-import{j as r}from"./app-Dv9W01ZJ.js";import{M as t}from"./MainLayout-gq90BDum.js";import"./NavLink-D8Rz_6IJ.js";import"./transition-DzQTZTtf.js";function m({post:i}){return r.jsx(t,{children:r.jsxs("div",{children:[r.jsx("h1",{children:"Post"}),JSON.stringify(i,null,2)]})})}export{m as default};

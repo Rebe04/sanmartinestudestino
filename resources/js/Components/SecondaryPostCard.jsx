@@ -15,7 +15,7 @@ export default function  SecondaryPostCard ({ post }) {
                     <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
                     <span>{post.created_at_formatted}</span>
                 </div>
-                <h4 className="text-lg lg:text-2xl font-bold font-second text-smd-dark leading-tight">
+                <h4 className="lg:text-2xl font-bold font-second text-smd-dark leading-tight">
                     <Link href={route('posts.show', post)} className="hover:text-smd-soft-green transition-colors">
                         {post.name}
                     </Link>
