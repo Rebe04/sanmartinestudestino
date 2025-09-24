@@ -14,8 +14,16 @@ class PostController extends Controller
 {
     public function index()
     {
+        $posts = Post::where('status', 2)
+            ->with(['image', 'user', 'postCategory'])
+            ->latest('id')
+            ->paginate(4);
+
+        $postCategories = PostCategory::all();
+
         return Inertia::render('Posts/Index', [
-            'posts' => Post::paginate(10)
+            'posts' => PostResource::collection($posts),
+            'post_categories' => PostCategoryResource::collection($postCategories),
         ]);
     }
 

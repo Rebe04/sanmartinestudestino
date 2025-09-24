@@ -1,0 +1,1 @@
+import{j as i}from"./app-DNBj_TwR.js";import{M as t}from"./MainLayout-KahkbKpQ.js";import"./NavLink-CwpBijOK.js";function o({hotel:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{o as default};

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, EffectFade } from 'swiper/modules';
 
-// Estilos de Swiper que debes tener instalados en tu proyecto
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
@@ -16,6 +15,7 @@ import slide3 from '../assets/images/banner/3.webp';
 import slide4 from '../assets/images/banner/4.webp';
 import cloudImg from '../assets/images/cloud.png';
 import DropdownSm from "@/Components/DropdownSm.jsx";
+import SocialIcon from "@/Components/SocialIcon.jsx";
 
 const slidesData = [
 
@@ -28,12 +28,6 @@ const slidesData = [
     { image: slide4, pretitle: 'Aventura sin Límites', title: 'Un Destino por Descubrir', subtitle: 'Senderismo, cabalgatas y experiencias que te conectarán con el llano.' }
 
 ];
-
-const SocialIcon = ({ href, children }) => (
-    <a target="_blank" href={href} className="w-9 h-9 flex items-center justify-center rounded-full bg-yellow-600/20 text-white hover:bg-green-500 transition-colors">
-        {children}
-    </a>
-);
 
 export default function Banner() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -67,16 +61,16 @@ export default function Banner() {
 
             <div className="hidden sm:flex flex-col items-center gap-2 absolute left-16 top-1/2 -translate-y-1/2 z-30">
                 <div className="w-[0.5px] h-32 mb-2 bg-green-700"></div>
-                <SocialIcon href="https://www.facebook.com/alcaldiasanmartindelosllanos">
+                <SocialIcon className={`w-9 h-9 flex items-center justify-center rounded-full bg-yellow-600/20 text-white hover:bg-green-500 transition-colors`} href="https://www.facebook.com/alcaldiasanmartindelosllanos">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
                 </SocialIcon>
-                <SocialIcon href="https://x.com/SanMartin_Meta">
+                <SocialIcon className={`w-9 h-9 flex items-center justify-center rounded-full bg-yellow-600/20 text-white hover:bg-green-500 transition-colors`} href="https://x.com/SanMartin_Meta">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-x" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
                 </SocialIcon>
-                <SocialIcon href="https://www.instagram.com/alcaldiasanmartindelosllanos/">
+                <SocialIcon className={`w-9 h-9 flex items-center justify-center rounded-full bg-yellow-600/20 text-white hover:bg-green-500 transition-colors`} href="https://www.instagram.com/alcaldiasanmartindelosllanos/">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-instagram" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
                 </SocialIcon>
-                <SocialIcon href="https://www.youtube.com/@AlcaldiadeSanMartindeLosLlanos">
+                <SocialIcon className={`w-9 h-9 flex items-center justify-center rounded-full bg-yellow-600/20 text-white hover:bg-green-500 transition-colors`} href="https://www.youtube.com/@AlcaldiadeSanMartindeLosLlanos">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-youtube" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />

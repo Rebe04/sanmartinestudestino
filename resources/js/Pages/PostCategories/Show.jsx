@@ -3,10 +3,12 @@ import FeaturedPostCard from "@/Components/FeaturedPostCard.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 import PostCard from "@/Components/PostsCard.jsx";
+import SideBar from "@/Components/SideBar.jsx";
 
-export default function Index({posts, postCategory}) {
+export default function Index({posts, postCategory, postCategories}) {
     const data = posts.data;
     const categoryData = postCategory.data;
+    const categories = postCategories.data;
     return(
         <MainLayout>
             <div className="min-h-screen w-full">
@@ -19,11 +21,14 @@ export default function Index({posts, postCategory}) {
                     </div>
                 </div>
                 <div className="max-w-smd-max mx-auto grid grid-cols-3 gap-smd-32 my-smd-80">
-                    {data.map((post, index) => (
-                        <div key={index}>
-                            <PostCard post={post} />
-                        </div>
-                    ))}
+                    <div className="col-span-2">
+                        {data.map((post, index) => (
+                            <div className="mb-smd-32" key={index}>
+                                <PostCard post={post} />
+                            </div>
+                        ))}
+                    </div>
+                    <SideBar categories={categories} />
                 </div>
             </div>
         </MainLayout>

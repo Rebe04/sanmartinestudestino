@@ -10,10 +10,13 @@ use App\Http\Controllers\RouteController;
 use App\Http\Controllers\FoodCategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostCategoryController;
+use App\Http\Controllers\CuadrillasController;
+use App\Http\Controllers\MonumentController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // -- Rutas para Events --
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
@@ -50,6 +53,16 @@ Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
 // -- Rutas para PostCategories --
 Route::get('/post-categories', [PostCategoryController::class, 'index'])->name('post_categories.index');
 Route::get('/post-categories/{postCategory}', [PostCategoryController::class, 'show'])->name('post_categories.show');
+
+Route::get('/nuestra-historia', function () {
+    return Inertia::render('AboutUs');
+})->name('about-us');
+
+Route::get('/cuadrillas',[CuadrillasController::class, 'index'])->name('cuadrillas');
+
+Route::get('/monuments',[MonumentController::class, 'index'])->name('monuments');
+
+Route::get('/contactanos',[ContactController::class, 'index'])->name('contact-us');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

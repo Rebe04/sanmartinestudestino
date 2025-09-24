@@ -19,6 +19,8 @@ return new class extends Migration {
             $table->string('youtube')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
+            $table->unsignedBigInteger('place_category_id');
+            $table->foreign('place_category_id')->references('id')->on('place_categories')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

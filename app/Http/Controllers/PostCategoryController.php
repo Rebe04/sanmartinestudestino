@@ -34,10 +34,12 @@ class PostCategoryController extends Controller
             ->with(['image', 'user'])
             ->get();
 
+        $postCategories = PostCategory::all();
 
         return Inertia::render('PostCategories/Show', [
             'posts' => PostResource::collection($posts),
             'postCategory' => new PostCategoryResource($postCategory),
+            'postCategories' => PostCategoryResource::collection($postCategories),
         ]);
     }
 

@@ -3,6 +3,7 @@ import blogImage from "@/assets/images/banner/1.webp";
 import wallpaper from "@/assets/images/wallpaper-01.png";
 import {CalendarIcon, ChevronRightIcon, UserIcon} from "@heroicons/react/24/outline";
 import {Link} from "@inertiajs/react";
+import SideBar from "@/Components/SideBar.jsx";
 
 export default function Index({post, related, post_category}) {
     const data = post.data;
@@ -48,43 +49,7 @@ export default function Index({post, related, post_category}) {
                                 </p>
                             </div>
                         </div>
-                        <aside>
-                            <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-16">
-                                <h2 className="text-2xl text-center lg:text-left font-second font-bold text-smd-dark mb-smd-16">Categorías de Posts</h2>
-                                <ul>
-                                    {categories.map((postCategory, index) => (
-                                        <li className="bg-smd-light p-smd-16 mt-smd-8 rounded-lg text-center lg:text-left" key={index}>
-                                            <Link href={route('post_categories.show', postCategory)}>
-                                                {postCategory.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="bg-gray-200/80 rounded-xl mt-smd-32 mx-smd-24 lg:mx-0 p-smd-16">
-                                <h2 className="text-2xl font-second font-bold text-smd-dark">Posts Relacionados</h2>
-                                <ul>
-                                    {relatedPosts.map((post, index) => (
-                                        <li className="p-smd-16 mt-smd-8 rounded-lg" key={index}>
-                                            <Link className="flex group items-center" href={route('posts.show', post)}>
-                                                <div className="w-smd-184 h-smd-96 rounded-xl mr-smd-16 overflow-hidden">
-                                                    <img className="w-full h-full object-cover" src={post.image.url} alt={post.name}/>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-smd-dark text-xl font-second font-bold group-hover:text-smd-soft-green">
-                                                        {post.name}
-                                                    </h3>
-                                                    <p className="text-smd-soft-green group-hover:text-smd-yellow">
-                                                        {post.created_at_formatted}
-                                                    </p>
-                                                </div>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                        </aside>
+                        <SideBar categories={categories} relatedPosts={relatedPosts} />
                     </div>
                 </div>
             </div>

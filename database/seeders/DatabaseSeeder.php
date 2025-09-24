@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             TagSeeder::class,
             BannerSeeder::class,
             CategorySeeder::class, // Crea EventCategory y FoodCategory
+            PlaceCategorySeeder::class,
             PlaceSeeder::class,
         ]);
 

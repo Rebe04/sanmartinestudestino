@@ -16,18 +16,18 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
 
                     <div className="flex justify-end gap-x-20 ">
                         <nav className="hidden lg:flex items-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8">
-                            <NavLink href="/">Inicio</NavLink>
+                            <NavLink href={route('home')}>Inicio</NavLink>
                             <DropdownSm title="Guía Local">
-                                <DropdownSm.Link href="#">Dónde Dormir</DropdownSm.Link>
-                                <DropdownSm.Link href="#">Dónde Comer</DropdownSm.Link>
+                                <DropdownSm.Link href={route('hotels.index')}>Dónde Dormir</DropdownSm.Link>
+                                <DropdownSm.Link href={route('restaurants.index')}>Dónde Comer</DropdownSm.Link>
                             </DropdownSm>
                             <DropdownSm title="Cultura y Eventos">
-                                <DropdownSm.Link href="#">Nuestra Historia</DropdownSm.Link>
-                                <DropdownSm.Link href="#">Las Cuadrillas</DropdownSm.Link>
-                                <DropdownSm.Link href="#">Monumentos</DropdownSm.Link>
+                                <DropdownSm.Link href={route('about-us')}>Nuestra Historia</DropdownSm.Link>
+                                <DropdownSm.Link href={route('cuadrillas')}>Las Cuadrillas</DropdownSm.Link>
+                                <DropdownSm.Link href={route('monuments')}>Monumentos</DropdownSm.Link>
                             </DropdownSm>
-                            <NavLink href="#">Cronograma</NavLink>
-                            <NavLink href="#">Contacto</NavLink>
+                            <NavLink href={route('posts.index')}>Blog</NavLink>
+                            <NavLink href={route('contact-us')}>Contacto</NavLink>
                         </nav>
 
                         <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                                     </svg>
                                 </button>
                             </div>
-                            <Link href="#" className="hidden xl:block bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors">
+                            <Link href={route('routes.index')} className="hidden xl:block bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors">
                                 Explora San Martín
                             </Link>
                             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden">
@@ -70,11 +70,18 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                             </div>
                             <div className="mt-6">
                                 <nav className="grid gap-y-8">
-                                    <a href="#" className="font-bold text-gray-700 hover:text-green-700 py-2">Inicio</a>
-                                    <a href="#" className="font-bold text-gray-700 hover:text-green-700 py-2">Guía Local</a>
-                                    <a href="#" className="font-bold text-gray-700 hover:text-green-700 py-2">Cultura y Eventos</a>
-                                    <a href="#" className="font-bold text-gray-700 hover:text-green-700 py-2">Cronograma</a>
-                                    <a href="#" className="font-bold text-gray-700 hover:text-green-700 py-2">Contacto</a>
+                                    <NavLink href={route('home')}>Inicio</NavLink>
+                                    <DropdownSm mobile={true} title="Guía Local">
+                                        <DropdownSm.Link href={route('hotels.index')}>Dónde Dormir</DropdownSm.Link>
+                                        <DropdownSm.Link href={route('restaurants.index')}>Dónde Comer</DropdownSm.Link>
+                                    </DropdownSm>
+                                    <DropdownSm mobile={true} title="Cultura y Eventos">
+                                        <DropdownSm.Link href={route('about-us')}>Nuestra Historia</DropdownSm.Link>
+                                        <DropdownSm.Link href={route('cuadrillas')}>Las Cuadrillas</DropdownSm.Link>
+                                        <DropdownSm.Link href={route('monuments')}>Monumentos</DropdownSm.Link>
+                                    </DropdownSm>
+                                    <NavLink href={route('posts.index')}>Blog</NavLink>
+                                    <NavLink href={route('contact-us')}>Contacto</NavLink>
                                 </nav>
                             </div>
                         </div>

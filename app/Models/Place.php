@@ -38,4 +38,9 @@ class Place extends Model
     {
         return $this->belongsToMany(Route::class, 'route_place');
     }
+
+    //    Relación uno amuchos inversa
+    public function placeCategory() {
+        return $this->belongsTo(PlaceCategory::class);
+    }
 }

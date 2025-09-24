@@ -96,10 +96,10 @@ export default function RoutesSection() {
                     ))}
                 </div>
                 <div className="flex justify-center lg:justify-end w-full mt-smd-64">
-                    <a href="#" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
+                    <Link href={route('routes.index')} className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
                         Explora todas nuestras rutas
                         <ChevronRightIcon className="w-5 h-5 animate-bounce-horizontal" />
-                    </a>
+                    </Link>
                 </div>
             </div>
 
