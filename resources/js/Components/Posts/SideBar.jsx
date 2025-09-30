@@ -1,5 +1,5 @@
 import {Link} from "@inertiajs/react";
-import SocialIcon from "@/Components/SocialIcon.jsx";
+import SocialIcon from "@/Components/Utils/SocialIcon.jsx";
 
 export default function SideBar({categories, relatedPosts = [] }) {
     return (

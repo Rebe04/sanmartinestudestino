@@ -1,9 +1,9 @@
 import {Link} from "@inertiajs/react";
 import {MapPinIcon} from "@heroicons/react/16/solid/index.js";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
-import hotel1 from "../assets/images/hotels/hotel_1.jpg"
-import hotel2 from "../assets/images/hotels/hotel_2.jpg"
-import hotel3 from "../assets/images/hotels/hotel_3.jpg"
+import hotel1 from "../../assets/images/hotels/hotel_1.jpg"
+import hotel2 from "../../assets/images/hotels/hotel_2.jpg"
+import hotel3 from "../../assets/images/hotels/hotel_3.jpg"
 
 export default function DondeDormir(){
 

@@ -1,6 +1,6 @@
 
-import FeaturedPostCard from "@/Components/FeaturedPostCard.jsx";
-import SecondaryPostCard from "@/Components/SecondaryPostCard.jsx";
+import FeaturedPostCard from "@/Components/Home/FeaturedPostCard.jsx";
+import SecondaryPostCard from "@/Components/Home/SecondaryPostCard.jsx";
 import {Link} from "@inertiajs/react";
 import {ArrowRightIcon} from "@heroicons/react/16/solid/index.js";
 

@@ -1,11 +1,11 @@
 import {Head, Link} from '@inertiajs/react';
 import { useState, useEffect } from 'react';
 import logo from '../assets/images/logo.png';
-import SearchModal from '@/Components/SearchModal';
+import SearchModal from '@/Components/Utils/SearchModal.jsx';
 import Preloader from "@/Components/Preloader.jsx";
 import Footer from "@/Components/Footer.jsx";
-import SideMenu from "@/Components/SideMenu.jsx";
-import Navbar from "@/Components/Navbar.jsx";
+import SideMenu from "@/Components/Utils/SideMenu.jsx";
+import Navbar from "@/Components/Utils/Navbar.jsx";
 import Lenis from "@studio-freight/lenis";
 
 export default function MainLayout({ children }) {

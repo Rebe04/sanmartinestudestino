@@ -1,5 +1,5 @@
 import {XMarkIcon} from "@heroicons/react/24/solid";
-import logo from '../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
 
 export default function SideMenu({setSideMenuOpen}) {
     return (

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import {PlayIcon, XMarkIcon, ChevronRightIcon, GlobeAmericasIcon, MapIcon} from '@heroicons/react/24/outline';
 
-import imageTopLeft from '../assets/images/banner/1.webp';
-import imageCenter from '../assets/images/banner/2.webp';
-import imageBottomLeft from '../assets/images/banner/3.webp';
-import shapeImage from '../assets/images/shape.png';
+import imageTopLeft from '../../assets/images/banner/1.webp';
+import imageCenter from '../../assets/images/banner/2.webp';
+import imageBottomLeft from '../../assets/images/banner/3.webp';
+import shapeImage from '../../assets/images/shape.png';
 
 const AboutCard = ({ icon, title, text }) => (
     <div className="flex items-center gap-4 group cursor-pointer">

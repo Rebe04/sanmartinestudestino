@@ -9,13 +9,13 @@ import 'swiper/css/effect-fade';
 // Iconos
 import {ArrowLongLeftIcon, ArrowLongRightIcon, ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/outline';
 
-import slide1 from '../assets/images/banner/1.webp';
-import slide2 from '../assets/images/banner/2.webp';
-import slide3 from '../assets/images/banner/3.webp';
-import slide4 from '../assets/images/banner/4.webp';
-import cloudImg from '../assets/images/cloud.png';
-import DropdownSm from "@/Components/DropdownSm.jsx";
-import SocialIcon from "@/Components/SocialIcon.jsx";
+import slide1 from '../../assets/images/banner/1.webp';
+import slide2 from '../../assets/images/banner/2.webp';
+import slide3 from '../../assets/images/banner/3.webp';
+import slide4 from '../../assets/images/banner/4.webp';
+import cloudImg from '../../assets/images/cloud.png';
+import DropdownSm from "@/Components/Utils/DropdownSm.jsx";
+import SocialIcon from "@/Components/Utils/SocialIcon.jsx";
 
 const slidesData = [
 

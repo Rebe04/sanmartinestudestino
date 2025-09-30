@@ -1,9 +1,9 @@
 import MainLayout from "@/Layouts/MainLayout.jsx";
-import FeaturedPostCard from "@/Components/FeaturedPostCard.jsx";
+import FeaturedPostCard from "@/Components/Home/FeaturedPostCard.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
-import PostCard from "@/Components/PostsCard.jsx";
-import SideBar from "@/Components/SideBar.jsx";
+import PostCard from "@/Components/Posts/PostsCard.jsx";
+import SideBar from "@/Components/Posts/SideBar.jsx";
 
 export default function Index({posts, postCategory, postCategories}) {
     const data = posts.data;

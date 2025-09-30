@@ -1,13 +1,13 @@
-import bgShape from "../assets/shape3.png"
-import carne_P from "../assets/images/food/carne_P.jpeg"
-import cubas from "../assets/images/food/cubas.jpeg"
-import gacho from "../assets/images/food/gacho.jpg"
-import tungos from "../assets/images/food/tungos.jpeg"
+import bgShape from "../../assets/shape3.png"
+import carne_P from "../../assets/images/food/carne_P.jpeg"
+import cubas from "../../assets/images/food/cubas.jpeg"
+import gacho from "../../assets/images/food/gacho.jpg"
+import tungos from "../../assets/images/food/tungos.jpeg"
 import {Autoplay, EffectFade, Navigation, EffectFlip, EffectCards} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {useState} from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/24/outline";
-import GastronomiaCard from "@/Components/GastronomiaCard.jsx";
+import GastronomiaCard from "@/Components/Home/GastronomiaCard.jsx";
 export default function () {
 
     const [activeIndex, setActiveIndex] = useState(0);

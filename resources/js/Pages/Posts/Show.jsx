@@ -3,7 +3,7 @@ import blogImage from "@/assets/images/banner/1.webp";
 import wallpaper from "@/assets/images/wallpaper-01.png";
 import {CalendarIcon, ChevronRightIcon, UserIcon} from "@heroicons/react/24/outline";
 import {Link} from "@inertiajs/react";
-import SideBar from "@/Components/SideBar.jsx";
+import SideBar from "@/Components/Posts/SideBar.jsx";
 
 export default function Index({post, related, post_category}) {
     const data = post.data;

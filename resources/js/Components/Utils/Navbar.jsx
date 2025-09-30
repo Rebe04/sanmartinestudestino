@@ -1,6 +1,6 @@
 import logo from "@/assets/images/logo.png";
-import NavLink from "@/Components/NavLink.jsx";
-import DropdownSm from "@/Components/DropdownSm.jsx";
+import NavLink from "@/Components/Utils/NavLink.jsx";
+import DropdownSm from "@/Components/Utils/DropdownSm.jsx";
 import {Bars3BottomRightIcon, MagnifyingGlassIcon, XMarkIcon} from '@heroicons/react/24/solid';
 import {Link} from "@inertiajs/react";
 
@@ -10,7 +10,7 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
             {/* --- Header Flotante --- */}
             <div className={`fixed top-0 left-0 right-0 z-40 transition-all w-full px-4 md:px-12 duration-300 ${scrolled ? 'py-5' : 'py-7'}`}>
                 <header className={`w-full bg-white/95 backdrop-blur-md rounded-xl lg:rounded-full shadow-lg border border-gray-400/50 px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-[85px] lg:h-[80px] lg:py-2' : 'h-[85px] lg:h-[100px]'}`}>
-                    <Link href="/">
+                    <Link href="/public">
                         <img className={`w-20 lg:w-28 h-auto transition-all duration-300 ${scrolled ? 'lg:w-20' : 'lg:w-28'}`} src={logo} alt="San Martin es tu Destino Logo"/>
                     </Link>
 

@@ -1,9 +1,9 @@
-import EventCard from "@/Components/EventCard.jsx";
-import event1 from "../assets/images/events/Evento_1.jpeg"
-import event2 from "../assets/images/events/Evento_2.jpeg"
-import event3 from "../assets/images/events/Evento_3.jpg"
-import event4 from "../assets/images/events/Evento_4.jpeg"
-import event5 from "../assets/images/events/Evento_5.jpg"
+import EventCard from "@/Components/Home/EventCard.jsx";
+import event1 from "../../assets/images/events/Evento_1.jpeg"
+import event2 from "../../assets/images/events/Evento_2.jpeg"
+import event3 from "../../assets/images/events/Evento_3.jpg"
+import event4 from "../../assets/images/events/Evento_4.jpeg"
+import event5 from "../../assets/images/events/Evento_5.jpg"
 export default function NextEvent() {
 
     const eventos = [

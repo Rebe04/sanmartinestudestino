@@ -1,8 +1,8 @@
-import wallpaper from "../assets/images/wallpaper-01.png"
-import cascada from "../assets/images/routes/cascada.webp"
-import espanto from "../assets/images/routes/Espanto.webp"
-import iglesia from "../assets/images/routes/Iglesia.webp"
-import monumento from "../assets/images/routes/monumento.webp"
+import wallpaper from "../../assets/images/wallpaper-01.png"
+import cascada from "../../assets/images/routes/cascada.webp"
+import espanto from "../../assets/images/routes/Espanto.webp"
+import iglesia from "../../assets/images/routes/Iglesia.webp"
+import monumento from "../../assets/images/routes/monumento.webp"
 import {Link} from "@inertiajs/react";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 export default function RoutesSection() {

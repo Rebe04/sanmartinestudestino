@@ -22,6 +22,11 @@ class Hotel extends Model
         'web',
     ];
 
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
 //    Relación Polimorfica
     public function reviews()
     {
@@ -31,6 +36,11 @@ class Hotel extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable')->latestOfMany();
     }
 
     //    Relación muchos a muchos

@@ -43,4 +43,6 @@ html.lenis {
          animation: pulse-zoom 1.5s ease-in-out infinite;
      }
 
-
+.sm-container {
+    @apply max-w-smd-max mx-auto my-smd-8 lg:my-smd-80;
+}

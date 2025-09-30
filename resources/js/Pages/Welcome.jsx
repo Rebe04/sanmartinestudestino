@@ -1,12 +1,12 @@
 import { Head, Link } from '@inertiajs/react';
 import MainLayout from "@/Layouts/MainLayout.jsx";
-import Banner from "@/Components/Banner.jsx";
-import AboutSection from "@/Components/AboutSection.jsx";
-import RoutesSection from "@/Components/RoutesSection.jsx";
-import DondeComer from "@/Components/DondeComer.jsx";
-import DondeDormir from "@/Components/DondeDormir.jsx";
-import NextEvent from "@/Components/NextEvent.jsx";
-import PostsSection from "@/Components/PostsSection.jsx";
+import Banner from "@/Components/Home/Banner.jsx";
+import AboutSection from "@/Components/Home/AboutSection.jsx";
+import RoutesSection from "@/Components/Home/RoutesSection.jsx";
+import DondeComer from "@/Components/Home/DondeComer.jsx";
+import DondeDormir from "@/Components/Home/DondeDormir.jsx";
+import NextEvent from "@/Components/Home/NextEvent.jsx";
+import PostsSection from "@/Components/Home/PostsSection.jsx";
 
 export default function Welcome({ auth, laravelVersion, phpVersion, posts }) {
     return (
