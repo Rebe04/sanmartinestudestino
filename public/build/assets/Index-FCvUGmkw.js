@@ -1,0 +1,1 @@
+import{j as i}from"./app-NUGR0ryx.js";import{M as s}from"./MainLayout-C0OKn7dD.js";import"./NavLink-DcMhAdRv.js";function d({food_categories:r}){return i.jsx(s,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),i.jsx("ul",{children:r.data.map(n=>i.jsx("li",{children:n.name},n.id))})]})})}export{d as default};

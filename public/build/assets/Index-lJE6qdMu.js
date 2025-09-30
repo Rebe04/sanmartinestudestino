@@ -1,0 +1,1 @@
+import{j as i}from"./app-NUGR0ryx.js";import{M as e}from"./MainLayout-C0OKn7dD.js";import"./NavLink-DcMhAdRv.js";function d({places:s}){return i.jsx(e,{children:i.jsxs("div",{className:"min-h-screen",children:[i.jsx("h1",{children:"Lista de Lugares"}),i.jsx("ul",{children:s.data.map(r=>i.jsx("li",{children:r.name},r.id))})]})})}export{d as default};
