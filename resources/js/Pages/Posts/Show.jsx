@@ -46,7 +46,7 @@ export default function Index({post, related, post_category}) {
                         <img className="w-full rounded-xl object-cover" src={data.image.url} alt={data.name}/>
                     </div>
 
-                    <div className="grid mx-auto max-w-smd-max grid-cols-1 lg:grid-cols-3 mb-smd-104 lg:gap-smd-16">
+                    <div className="grid mx-auto max-w-smd-max grid-cols-1 lg:grid-cols-3 mb-smd-104 lg:gap-smd-48">
                         <div className="w-full col-span-2">
                             <div className="flex justify-center lg:justify-start mb-smd-40 gap-smd-32">
                                 <p className="text-smd-gray-text flex items-center gap-smd-4">
