@@ -9,8 +9,7 @@ export default function Index({post, related, post_category}) {
     const data = post.data;
     const relatedPosts = related.data;
     const categories = post_category.data;
-    //Imagen para SEO
-    const imageUrl = data.image ? data.image.url : null;
+
     return(
         <MainLayout>
             <Head>
@@ -23,7 +22,7 @@ export default function Index({post, related, post_category}) {
                 {/* Metaetiquetas de Open Graph (para Facebook, WhatsApp, etc.) */}
                 <meta property="og:title" content={data.name} />
                 <meta property="og:description" content={data.extract} />
-                <meta property="og:image" content={imageUrl} />
+                <meta property="og:image" content={data.image_url} />
                 <meta property="og:url" content={window.location.href} />
                 <meta property="og:type" content="article" />
 
@@ -31,7 +30,7 @@ export default function Index({post, related, post_category}) {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={data.name} />
                 <meta name="twitter:description" content={data.extract} />
-                <meta name="twitter:image" content={imageUrl} />
+                <meta name="twitter:image" content={data.image_url} />
             </Head>
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>

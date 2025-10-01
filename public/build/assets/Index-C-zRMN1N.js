@@ -1,1 +1,0 @@
-import{j as i}from"./app-nZIJ2mlT.js";import{M as s}from"./MainLayout-C4c4Mb7J.js";import"./NavLink-CKdsKLt-.js";function d({food_categories:r}){return i.jsx(s,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),i.jsx("ul",{children:r.data.map(n=>i.jsx("li",{children:n.name},n.id))})]})})}export{d as default};
