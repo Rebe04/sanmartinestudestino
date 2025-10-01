@@ -1,0 +1,1 @@
+import{j as i}from"./app-D1rA-8t0.js";import{M as n}from"./MainLayout-V6S35y9m.js";import"./NavLink-wsx61M3i.js";function t({postCategories:e}){return i.jsx(n,{children:i.jsxs("div",{className:"min-h-screen",children:[i.jsx("h1",{children:"Lista de Posts"}),i.jsx("ul",{children:e.data.map(s=>i.jsx("li",{children:s.name},s.id))})]})})}export{t as default};

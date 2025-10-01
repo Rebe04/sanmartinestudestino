@@ -4,10 +4,10 @@ import {ArrowRightIcon} from "@heroicons/react/16/solid/index.js";
 export default function  SecondaryPostCard ({ post }) {
     return (
         <div
-            className="group bg-white cursor-pointer rounded-2xl flex flex-1 items-center gap-x-4 transition-all duration-300 hover:shadow-2xl">
-            <div className="w-3/5 max-h-smd-208 rounded-l-xl overflow-hidden">
+            className="group bg-white max-h-smd-208 overflow-hidden cursor-pointer rounded-2xl flex flex-1 items-center gap-x-4 transition-all duration-300 hover:shadow-2xl">
+            <div className="w-3/5 rounded-l-xl overflow-hidden">
                 <img src={post.image_url} alt={post.name}
-                     className="w-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
             </div>
             <div className="w-2/3">
                 <div className="flex items-center gap-2 text-xs text-gray-500 mb-1">

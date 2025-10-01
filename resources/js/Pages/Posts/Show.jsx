@@ -42,7 +42,7 @@ export default function Index({post, related, post_category}) {
                     </div>
                 </div>
                 <div className="w-full">
-                    <div className="mx-auto px-smd-16 my-smd-16 lg:my-smd-40 w-full flex items-center overflow-hidden max-w-smd-max rounded-xl lg:h-smd-592">
+                    <div className="mx-auto px-smd-16 my-smd-16 lg:my-smd-40 lg:px-0 w-full flex items-center overflow-hidden max-w-smd-max rounded-xl lg:h-smd-592">
                         <img className="w-full rounded-xl object-cover" src={data.image.url} alt={data.name}/>
                     </div>
 
