@@ -70,7 +70,6 @@ export default function Index({restaurant, reviews}) {
                             ))}
                         </div>
                     </div>
-                    {JSON.stringify(restaurant)}
                     <ReviewsList reviews={reviews} />
                 </div>
             </div>
