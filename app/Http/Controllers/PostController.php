@@ -54,12 +54,18 @@ class PostController extends Controller
             ->get();
 
         $postCategories = PostCategory::all();
-
+        $postResource = new PostResource($post);
 
         return Inertia::render('Posts/Show', [
             'post' => new PostResource($post),
             'related' => PostResource::collection($related),
             'post_category' => PostCategoryResource::collection($postCategories),
+
+            'seo' => [
+                'title' => $post->name,
+                'description' => $post->extract,
+                'image' => $postResource->toArray(request())['image_url'], // Usamos la URL absoluta del resource
+            ]
         ]);
     }
 
