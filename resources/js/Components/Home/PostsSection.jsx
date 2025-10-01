@@ -46,7 +46,7 @@ export default function PostsSection({ posts }) {
                     </div>
 
                     {/* Columna de los Posts Secundarios */}
-                    <div className="flex flex-col lg:col-span-4 h-full gap-smd-16">
+                    <div className="flex flex-col justify-between lg:col-span-4 h-full gap-smd-16">
                         {otherPosts.map(post => (
                             <SecondaryPostCard key={post.id} post={post} />
                         ))}
