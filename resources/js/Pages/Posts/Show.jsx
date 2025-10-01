@@ -2,15 +2,37 @@ import MainLayout from "@/Layouts/MainLayout.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
 import wallpaper from "@/assets/images/wallpaper-01.png";
 import {CalendarIcon, ChevronRightIcon, UserIcon} from "@heroicons/react/24/outline";
-import {Link} from "@inertiajs/react";
+import {Head, Link} from "@inertiajs/react";
 import SideBar from "@/Components/Posts/SideBar.jsx";
 
 export default function Index({post, related, post_category}) {
     const data = post.data;
     const relatedPosts = related.data;
     const categories = post_category.data;
+    //Imagen para SEO
+    const imageUrl = data.image ? data.image.url : null;
     return(
         <MainLayout>
+            <Head>
+                {/* Título de la página */}
+                <title>{data.name}</title>
+
+                {/* Metaetiquetas estándar */}
+                <meta name="description" content={data.extract} />
+
+                {/* Metaetiquetas de Open Graph (para Facebook, WhatsApp, etc.) */}
+                <meta property="og:title" content={data.name} />
+                <meta property="og:description" content={data.extract} />
+                <meta property="og:image" content={imageUrl} />
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:type" content="article" />
+
+                {/* Metaetiquetas de Twitter Cards (para Twitter) */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={data.name} />
+                <meta name="twitter:description" content={data.extract} />
+                <meta name="twitter:image" content={imageUrl} />
+            </Head>
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute w-full top-0 h-smd-496 bg-smd-dark opacity-75"></div>

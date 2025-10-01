@@ -28,6 +28,11 @@ class Restaurant extends Model
         return $this->morphMany(Review::class, 'reviewable');
     }
 
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable')->latestOfMany();
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
@@ -39,7 +44,7 @@ class Restaurant extends Model
     }
 
 //    Relación uno a muchos
-    public function dish(){
+    public function dishes(){
         return $this->hasMany(Dish::class);
     }
 

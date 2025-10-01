@@ -1,0 +1,1 @@
+import{j as o,L as r}from"./app-Brl9w5bM.js";function n({href:t,children:e}){return o.jsx(r,{href:t,className:"flex items-center gap-1.5 lg:text-lg font-bold text-gray-800 hover:text-yellow-500 transition-colors duration-300",children:e})}export{n as N};

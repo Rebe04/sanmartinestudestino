@@ -1,1 +1,0 @@
-import{j as i}from"./app-NUGR0ryx.js";import{M as n}from"./MainLayout-C0OKn7dD.js";import"./NavLink-DcMhAdRv.js";function t({postCategories:e}){return i.jsx(n,{children:i.jsxs("div",{className:"min-h-screen",children:[i.jsx("h1",{children:"Lista de Posts"}),i.jsx("ul",{children:e.data.map(s=>i.jsx("li",{children:s.name},s.id))})]})})}export{t as default};
