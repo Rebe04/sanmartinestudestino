@@ -8,11 +8,11 @@ export default function PlaceSideBar({place, places}) {
             {place.phone || place.email || place.facebook || place.instagram || place.youtube ?
                 (<div className="bg-gray-200/80 rounded-xl lg:mx-0 p-smd-32  mt-smd-16">
                     <h2 className="text-2xl text-center lg:text-left font-second font-bold text-smd-dark mb-smd-16">Más Información</h2>
-                    <div className="flex justify-center lg:justify-start gap-smd-8 mb-smd-8">
+                    <div className="flex flex-col 2xl:flex-wrap justify-center lg:justify-start gap-x-smd-8 mb-smd-8">
                         <span className="font-semibold">Telefono:</span>
                         <Link className="text-smd-gray-text" href={`tel:${place.phone}`}>{place.phone}</Link>
                     </div>
-                    <div className="flex justify-center lg:justify-start gap-smd-8 mb-smd-24">
+                    <div className="flex justify-center flex-col 2xl:flex-wrap lg:justify-start gap-x-smd-8 mb-smd-24">
                         <span className="font-semibold">Email:</span>
                         <Link className="text-smd-gray-text" href={`mailto:${place.email}`}>{place.email}</Link>
                     </div>

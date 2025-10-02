@@ -13,6 +13,7 @@ export default {
     theme: {
         maxWidth: {
             "smd-max": "1320px",
+            "smd-max-lg": "1080px",
             "smd-300": "300px",
         },
         extend: {

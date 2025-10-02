@@ -40,14 +40,14 @@ export default function Index({post, related, post_category}) {
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Posts</p>
                     </div>
                 </div>
-                <div className="w-full">
-                    <div className="mx-auto px-smd-16 my-smd-16 lg:my-smd-40 lg:px-0 w-full flex items-center overflow-hidden max-w-smd-max rounded-xl lg:h-smd-592">
+                <div className="sm-container">
+                    <div className="mx-auto my-smd-16 lg:my-smd-40 lg:px-0 w-full flex items-center overflow-hidden rounded-xl lg:h-smd-592">
                         <img className="w-full rounded-xl object-cover" src={data.image.url} alt={data.name}/>
                     </div>
 
-                    <div className="grid mx-auto max-w-smd-max grid-cols-1 lg:grid-cols-3 mb-smd-104 lg:gap-smd-48">
+                    <div className="grid  grid-cols-1 lg:grid-cols-3 mb-smd-104 lg:gap-smd-48">
                         <div className="w-full col-span-2">
-                            <div className="flex justify-center lg:justify-start mb-smd-40 gap-smd-32 px-smd-16 2xl:px-0">
+                            <div className="flex justify-center lg:justify-start mb-smd-40 gap-smd-32 2xl:px-0">
                                 <p className="text-smd-gray-text flex items-center gap-smd-4">
                                     <span>
                                         <UserIcon className="h-smd-16 w-smd-16"/>
@@ -61,10 +61,10 @@ export default function Index({post, related, post_category}) {
                                     {data.created_at_formatted}
                                 </p>
                             </div>
-                            <h1 className="text-smd-dark text-center lg:text-left text-2xl md:text-5xl font-second font-bold mb-smd-40 px-smd-16 2xl:px-0">
+                            <h1 className="text-smd-dark text-center lg:text-left text-2xl md:text-5xl font-second font-bold mb-smd-40 2xl:px-0">
                                 {data.name}
                             </h1>
-                            <div className="prose lg:prose-xl mb-smd-40 px-smd-16 text-justify w-full mx-auto xl:mx-0 2xl:px-0" dangerouslySetInnerHTML={{ __html: data.content }}>
+                            <div className="prose lg:prose-xl mb-smd-40 text-justify w-full mx-auto xl:mx-0 2xl:px-0" dangerouslySetInnerHTML={{ __html: data.content }}>
 
                             </div>
                         </div>

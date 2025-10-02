@@ -23,13 +23,13 @@ export default function SideBar({categories, relatedPosts = [] }) {
                     <h2 className="text-2xl font-second font-bold text-smd-dark">Posts Relacionados</h2>
                     <ul>
                         {relatedPosts.map((post, index) => (
-                            <li className="p-smd-16 mt-smd-8 rounded-lg group" key={index}>
+                            <li className="mt-smd-8 rounded-lg group" key={index}>
                                 <Link className="flex group items-center" href={route('posts.show', post)}>
-                                    <div className="w-smd-184 h-smd-96 rounded-xl mr-smd-16 overflow-hidden">
+                                    <div className="w-smd-64 h-smd-64 2xl:w-smd-184 rounded-xl mr-smd-16 overflow-hidden">
                                         <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={post.image.url} alt={post.name}/>
                                     </div>
-                                    <div>
-                                        <h3 className="text-smd-dark text-xl font-second font-bold group-hover:text-smd-soft-green">
+                                    <div className="flex-1">
+                                        <h3 className="text-smd-dark text-lg xl:text-xl font-second font-bold group-hover:text-smd-soft-green">
                                             {post.name}
                                         </h3>
                                         <p className="text-smd-soft-green group-hover:text-smd-yellow">
