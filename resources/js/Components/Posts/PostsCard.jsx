@@ -6,7 +6,7 @@ export default function PostCard({ post }) {
     const { name, created_at_formatted, image, user } = post;
     return (
         <div className="h-full">
-            <div className="overflow-hidden rounded-2xl h-smd-496 ">
+            <div className="overflow-hidden rounded-2xl h-smd-280 md:h-smd-400 lg:h-smd-496 ">
                 <img src={image.url} alt={name}
                      className="w-full object-cover"/>
             </div>

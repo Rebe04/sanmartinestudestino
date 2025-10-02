@@ -20,7 +20,7 @@ export default function Index({posts, post_categories}) {
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Blog</p>
                     </div>
                 </div>
-                <div className="max-w-smd-max mx-auto grid grid-cols-3 gap-smd-32 my-smd-80">
+                <div className="sm-container mx-auto grid lg:grid-cols-3 gap-smd-32 my-smd-80">
                     <div className="col-span-2">
                         {data.map((post, index) => (
                             <div className="mb-smd-32" key={index}>
