@@ -30,8 +30,8 @@ export default function DondeDormir(){
 
     return (
         <>
-        <section className="bg-smd-light w-full py-smd-144">
-            <div className="mx-auto px-1 md:px-4 w-full max-w-smd-max">
+        <section className="bg-smd-light w-full py-smd-48 2xl:py-smd-144">
+            <div className="mx-auto px-1 md:px-4 w-full sm-container">
                 <div className="w-full flex flex-col justify-center items-center px-smd-24">
                     <span className="text-smd-soft-green text-2xl">
                         Tu Descanso en el Llano

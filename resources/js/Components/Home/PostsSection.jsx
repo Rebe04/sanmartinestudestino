@@ -22,7 +22,7 @@ export default function PostsSection({ posts }) {
 
     return (
         <section className="py-smd-104 bg-gray-200">
-            <div className="mx-auto px-4 sm:px-6 max-w-smd-max lg:px-8">
+            <div className="mx-auto px-4 sm:px-6 sm-container lg:px-8">
                 {/* Cabecera de la sección */}
                 <div className="flex flex-wrap justify-between items-end gap-4 mb-12">
                     <div>

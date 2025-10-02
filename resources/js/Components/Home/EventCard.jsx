@@ -2,7 +2,7 @@ export default function  EventCard ({ subEvent, className = '' }) {
 
     return (
         <div className={`flex-shrink-0 w-full ${className}`}>
-            <div className="group relative overflow-hidden h-smd-568 shadow-lg">
+            <div className="group relative overflow-hidden h-smd-400 2xl:h-smd-568 shadow-lg">
                 <img
                     src={subEvent.image}
                     alt={subEvent.name}

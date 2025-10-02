@@ -47,7 +47,7 @@ export default function RoutesSection() {
     return (
         <>
         <section className="bg-gray-50 py-smd-96 w-full" style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
-            <div className="mx-auto px-1 md:px-4 w-full max-w-smd-max">
+            <div className="mx-auto px-1 md:px-4 w-full sm-container">
                 <div className="w-full flex flex-col px-smd-24 md:flex-row md:content-center justify-between md:items-center">
                     <div className="mb-8 lg:w-1/2 md:pr-smd-24">
                         <span className="text-smd-soft-green text-2xl">
