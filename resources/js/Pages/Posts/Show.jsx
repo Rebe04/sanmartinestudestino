@@ -35,19 +35,19 @@ export default function Index({post, related, post_category}) {
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute w-full top-0 h-smd-496 bg-smd-dark opacity-75"></div>
-                    <h1 className="text-smd-light px-smd-24 text-center text-3xl lg:text-7xl font-second z-10">{data.name}</h1>
-                    <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-500/15 mt-smd-16 backdrop-blur-sm text-smd-light px-smd-16 py-smd-8 rounded-full z-10">
+                    <h1 className="text-smd-light md:text-5xl 2xl:text-7xl font-second z-10">{data.name}</h1>
+                    <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-500/15 mt-smd-16 backdrop-blur-sm text-smd-light md:py-smd-4 px-smd-16 2xl:py-smd-8 rounded-full z-10">
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Posts</p>
                     </div>
                 </div>
                 <div className="sm-container">
-                    <div className="mx-auto my-smd-16 lg:my-smd-40 lg:px-0 w-full flex items-center overflow-hidden rounded-xl lg:h-smd-592">
+                    <div className="mx-auto my-smd-16 lg:my-smd-40 lg:px-0 w-full flex items-center overflow-hidden rounded-xl md:h-smd-400 2xl:h-smd-592">
                         <img className="w-full rounded-xl object-cover" src={data.image.url} alt={data.name}/>
                     </div>
 
                     <div className="grid  grid-cols-1 lg:grid-cols-3 mb-smd-104 lg:gap-smd-48">
                         <div className="w-full col-span-2">
-                            <div className="flex justify-center lg:justify-start mb-smd-40 gap-smd-32 2xl:px-0">
+                            <div className="flex justify-center lg:justify-start mb-smd-16 2xl:mb-smd-40 gap-smd-32 2xl:px-0">
                                 <p className="text-smd-gray-text flex items-center gap-smd-4">
                                     <span>
                                         <UserIcon className="h-smd-16 w-smd-16"/>
@@ -61,7 +61,7 @@ export default function Index({post, related, post_category}) {
                                     {data.created_at_formatted}
                                 </p>
                             </div>
-                            <h1 className="text-smd-dark text-center lg:text-left text-2xl md:text-5xl font-second font-bold mb-smd-40 2xl:px-0">
+                            <h1 className="text-smd-dark text-center lg:text-left text-2xl md:text-4xl 2xl:text-5xl font-second font-bold mb-smd-16 2xl:mb-smd-40 2xl:px-0">
                                 {data.name}
                             </h1>
                             <div className="prose lg:prose-xl mb-smd-40 text-justify w-full mx-auto xl:mx-0 2xl:px-0" dangerouslySetInnerHTML={{ __html: data.content }}>

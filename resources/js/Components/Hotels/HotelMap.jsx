@@ -8,7 +8,7 @@ export default function HotelMap({ address, name }) {
 
     return (
         <aside className="mb-smd-16"> {/* Hacemos el aside "pegajoso" en pantallas grandes */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="bg-white rounded-xl p-smd-16 2xl:p-smd-24 border border-gray-200">
                 <h3 className="text-xl font-second font-bold text-smd-dark mb-4 flex items-center">
                     <MapPinIcon className="h-6 w-6 mr-2 text-smd-soft-green" />
                     Ubicación

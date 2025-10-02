@@ -6,7 +6,7 @@ export default function ReviewsList({ reviews }) {
     // Si no hay reseñas, muestra un mensaje amigable
     if (!reviews || reviews.length === 0) {
         return (
-            <div className="mt-6 pt-6 border-t border-gray-200">
+            <div className="mt-smd-16 pt-smd-16 border-t border-gray-200">
                 <h2 className="text-2xl font-bold font-second text-smd-dark mb-4">
                     Opiniones
                 </h2>
@@ -16,11 +16,11 @@ export default function ReviewsList({ reviews }) {
     }
 
     return (
-        <div className="mt-6 pt-6 border-t border-gray-200">
+        <div className="mt-smd-16 pt-smd-16 border-t border-gray-200">
             <h2 className="text-2xl font-bold font-second text-smd-dark mb-4">
                 Opiniones ({reviews.total})
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-smd-16 2xl:space-y-smd-24">
                 {/* Mapeo sobre 'reviews.data' que contiene los resultados de la página actual */}
                 {reviews.data.map(review => (
                     <ReviewCard key={review.id} review={review} />

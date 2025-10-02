@@ -22,7 +22,7 @@ export default function PriceFilter({ ranges, activeFilter }) {
     };
 
     return (
-        <div className="bg-white rounded-xl p-6 shadow-md">
+        <div className="bg-white rounded-xl p-smd-16 shadow-md">
             <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-second font-bold text-smd-dark">
                     Precios

@@ -44,5 +44,5 @@ html.lenis {
      }
 
 .sm-container {
-    @apply 2xl:max-w-smd-max mx-auto my-smd-8 lg:my-smd-80 px-smd-32 2xl:px-0 md:max-w-smd-max-lg;
+    @apply 2xl:max-w-smd-max mx-auto my-smd-8 md:my-smd-32 2xl:my-smd-80 px-smd-32 2xl:px-0 md:max-w-smd-max-lg;
 }

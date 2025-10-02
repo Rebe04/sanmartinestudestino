@@ -12,7 +12,7 @@ export default function ReviewCard({ review }) {
     });
 
     return (
-        <div className="bg-gray-50 p-6 rounded-xl border">
+        <div className="bg-gray-50 p-smd-16 2xl:p-smd-24 rounded-xl border">
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
                     {/* Placeholder para un avatar de usuario */}

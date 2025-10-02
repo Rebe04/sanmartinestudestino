@@ -5,11 +5,11 @@ export default function SideBar({categories, relatedPosts = [] }) {
     return (
         <aside>
             {categories.length > 0 && (
-                <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-32 mb-smd-32">
+                <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-16 mb-smd-32">
                     <h2 className="text-2xl text-center lg:text-left font-second font-bold text-smd-dark mb-smd-16">Categorías de Posts</h2>
                     <ul>
                         {categories.map((postCategory, index) => (
-                            <li className="bg-smd-light p-smd-16 cursor pointer mt-smd-8 rounded-lg text-center lg:text-left hover:bg-smd-yellow hover:text-smd-light" key={index}>
+                            <li className="bg-smd-light p-smd-8 2xl:p-smd-16 cursor pointer mt-smd-8 rounded-lg text-center lg:text-left hover:bg-smd-yellow hover:text-smd-light" key={index}>
                                 <Link href={route('post_categories.show', postCategory)}>
                                     {postCategory.name}
                                 </Link>
@@ -19,7 +19,7 @@ export default function SideBar({categories, relatedPosts = [] }) {
                 </div>
             )}
             {relatedPosts.length > 0 && (
-                <div className="bg-gray-200/80 rounded-xl mb-smd-32 mx-smd-24 lg:mx-0 p-smd-32">
+                <div className="bg-gray-200/80 rounded-xl mb-smd-32 mx-smd-24 lg:mx-0 p-smd-16 2xl:p-smd-32">
                     <h2 className="text-2xl font-second font-bold text-smd-dark">Posts Relacionados</h2>
                     <ul>
                         {relatedPosts.map((post, index) => (
@@ -43,7 +43,7 @@ export default function SideBar({categories, relatedPosts = [] }) {
                 </div>
             )}
 
-            <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-32">
+            <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-16 2xl:p-smd-32">
                 <h2 className="text-2xl text-center lg:text-left font-second font-bold text-smd-dark mb-smd-16">Síguenos</h2>
                 <div className="flex justify-start  items-center gap-smd-16">
                     <SocialIcon className={`w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-white border-2 border-green-500 transition-colors duration-300 hover:bg-green-500`} href="https://www.facebook.com/alcaldiasanmartindelosllanos">

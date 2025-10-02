@@ -15,23 +15,23 @@ export default function Index({restaurant, reviews}) {
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
-                    <h1 className="text-smd-light text-center text-4xl lg:text-7xl font-second z-10">{restaurant.name}</h1>
-                    <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-400/15 backdrop-blur-sm mt-smd-16 text-smd-light px-smd-16 py-smd-8 rounded-full z-10">
+                    <h1 className="text-smd-light md:text-5xl 2xl:text-7xl font-second z-10">{restaurant.name}</h1>
+                    <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-500/15 mt-smd-16 backdrop-blur-sm text-smd-light md:py-smd-4 px-smd-16 2xl:py-smd-8 rounded-full z-10">
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Detalles del restaurante</p>
                     </div>
                 </div>
                 <div className="sm-container">
-                    <div className="flex flex-col mb-smd-32 rounded-2xl bg-gray-200 px-smd-24 py-smd-32 md:flex-row md:justify-between items-center w-full">
+                    <div className="flex flex-col mb-smd-32 rounded-2xl bg-gray-200 px-smd-16 2xl:px-smd-24 py-smd-16 2xl:py-smd-32 md:flex-row md:justify-between items-center w-full">
                         <div>
-                            <h1 className="text-2xl font-second text-dark font-bold">
+                            <h1 className="text-xl 2xl:text-2xl font-second text-smd-dark font-bold">
                                 {restaurant.name}
                             </h1>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-xs 2xl:text-sm text-gray-500">
                                 <span className="font-semibold">Tipo:</span> {restaurant.food_category.name}
                             </p>
                         </div>
                         <div className="flex flex-col md:flex-row items-center text-gray-500">
-                            <p className="mr-smd-8">
+                            <p className="mr-smd-8 text-sm">
                                 ({restaurant.reviews_count} Opiniones)
                             </p>
                             <div className="flex">
@@ -47,7 +47,7 @@ export default function Index({restaurant, reviews}) {
                                     );
                                 })}
                             </div>
-                            <div className="flex ml-smd-8">
+                            <div className="flex text-sm ml-smd-8">
                                 <MapPinIcon className="w-5 h-5 text-smd-soft-green text-lg" />
                                 <p>{restaurant.address}</p>
                             </div>
@@ -64,9 +64,9 @@ export default function Index({restaurant, reviews}) {
                         <h2 className="text-center mb-smd-16 text-3xl text-smd-soft-green font-bold">
                             Platos Destacados
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-smd-16 2xl:grid-cols-4">
                             {dishes.map((dish, index) => (
-                                <DishCard dish={dish} />
+                                <DishCard key={index} dish={dish} />
                             ))}
                         </div>
                     </div>

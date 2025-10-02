@@ -30,7 +30,7 @@ export default function HotelImageGallery({ images }) {
             >
                 {images.map(image => (
                     <SwiperSlide key={`main-${image.id}`}>
-                        <img src={image.url} className="w-full h-smd-592 object-cover" alt="Imagen del Lugar"/>
+                        <img src={image.url} className="w-full h-smd-384 2xl:h-smd-592 object-cover" alt="Imagen del Lugar"/>
                     </SwiperSlide>
                 ))}
             </Swiper>

@@ -10,7 +10,7 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
             {/* --- Header Flotante --- */}
             <div className={`fixed top-0 left-0 right-0 z-40 transition-all w-full px-4 md:px-12 duration-300 ${scrolled ? 'py-5' : 'py-7'}`}>
                 <header className={`w-full bg-white/95 backdrop-blur-md rounded-xl lg:rounded-full shadow-lg border border-gray-400/50 px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-[85px] lg:h-[80px] lg:py-2' : 'h-[85px] lg:h-[100px]'}`}>
-                    <Link href="/public">
+                    <Link href={route('home')}>
                         <img className={`w-20 lg:w-28 h-auto transition-all duration-300 ${scrolled ? 'lg:w-20' : 'lg:w-28'}`} src={logo} alt="San Martin es tu Destino Logo"/>
                     </Link>
 
@@ -56,9 +56,9 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                         <div className="pt-5 pb-6 px-5">
                             <div className="flex items-center justify-between">
-                                <div>
+                                <Link href={route('home')}>
                                     <img className="h-12 w-auto" src={logo} alt="Logo" />
-                                </div>
+                                </Link>
                                 <div className="-mr-2">
                                     <button
                                         onClick={() => setMobileMenuOpen(false)}

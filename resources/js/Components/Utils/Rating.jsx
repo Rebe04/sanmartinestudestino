@@ -7,7 +7,7 @@ export default function Rating({ hotel = null, rating = 0 }) {
     const fullStars = Math.round(rating || 0); // Redondea el rating al entero más cercano
 
     return (
-        <div className="flex px-smd-16 pt-smd-16 items-center">
+        <div className="flex px-smd-16 pt-smd-4 2xl:pt-smd-16 items-center">
             {[...Array(totalStars)].map((_, index) => {
                 const starNumber = index + 1;
                 return (
