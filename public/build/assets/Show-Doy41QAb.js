@@ -1,0 +1,1 @@
+import{j as i}from"./app-DKYXYJe4.js";import{M as t}from"./MainLayout-C46KRGF4.js";import"./NavLink-WpBys5SF.js";function o({event:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{o as default};

@@ -64,10 +64,8 @@ export default function Index({post, related, post_category}) {
                             <h1 className="text-smd-dark text-center lg:text-left text-5xl font-second font-bold mb-smd-40">
                                 {data.name}
                             </h1>
-                            <div className="mb-smd-40">
-                                <p className="text-smd-gray-text px-smd-24 text-justify lg:px-0 lg:text-left">
-                                    {data.content}
-                                </p>
+                            <div className="prose lg:prose-xl mb-smd-40" dangerouslySetInnerHTML={{ __html: data.content }}>
+
                             </div>
                         </div>
                         <SideBar categories={categories} relatedPosts={relatedPosts} />

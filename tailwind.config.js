@@ -44,6 +44,15 @@ export default {
                 "smd-soft-green": "#16a34a",
                 "smd-yellow": "#f6c132",
             },
+            typography: ({ theme }) => ({
+                DEFAULT: {
+                    css: {
+                        '--tw-prose-body': theme('colors.smd-gray-text'),
+                        '--tw-prose-headings': theme('colors.smd-dark'),
+                        '--tw-prose-links': theme('colors.smd-soft-green'),
+                    },
+                },
+            }),
             spacing: {
                 "smd-4": "4px",
                 "smd-8": "8px",
@@ -155,5 +164,8 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        require('@tailwindcss/typography'),
+    ],
 };
