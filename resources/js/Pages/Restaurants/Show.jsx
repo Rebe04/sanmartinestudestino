@@ -17,7 +17,7 @@ export default function Index({restaurant, reviews}) {
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
                     <h1 className="text-smd-light text-center text-4xl lg:text-7xl font-second z-10">{restaurant.name}</h1>
                     <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-400/15 backdrop-blur-sm mt-smd-16 text-smd-light px-smd-16 py-smd-8 rounded-full z-10">
-                        <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>¿Detalles del restaurante</p>
+                        <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Detalles del restaurante</p>
                     </div>
                 </div>
                 <div className="sm-container">

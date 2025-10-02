@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs, Autoplay } from 'swiper/modules';
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/24/outline";
 
-export default function HotelImageGallery({ images }) {
+export default function PlaceImageGallery({ images }) {
     // Estado para mantener la instancia del slider de miniaturas
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -26,11 +26,11 @@ export default function HotelImageGallery({ images }) {
                 spaceBetween={10}
                 thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
-                className="md:rounded-2xl shadow-lg"
+                className="rounded-2xl shadow-lg"
             >
                 {images.map(image => (
                     <SwiperSlide key={`main-${image.id}`}>
-                        <img src={image.url} className="w-full h-smd-592 object-cover" alt="Imagen del Lugar"/>
+                        <img src={image.url} className="w-full h-smd-400 lg:h-smd-592 object-cover" alt="Imagen de hotel"/>
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -67,7 +67,7 @@ export default function HotelImageGallery({ images }) {
             >
                 {images.map(image => (
                     <SwiperSlide key={`thumb-${image.id}`} className="cursor-pointer rounded-xl overflow-hidden opacity-50 swiper-slide-thumb">
-                        <img src={image.url} className="w-full h-24 object-cover" alt="Miniatura del lugar"/>
+                        <img src={image.url} className="w-full h-24 object-cover" alt="Miniatura de hotel"/>
                     </SwiperSlide>
                 ))}
             </Swiper>

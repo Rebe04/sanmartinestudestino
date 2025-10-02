@@ -28,8 +28,19 @@ class PlaceController extends Controller
     }
 
     public function show(Place $place){
+        $placeCategories = PlaceCategory::all();
+        $places = Place::take(5)->with('image')->latest()->get();
+        $place->load('images','image', 'placeCategory');
         return Inertia::render('Places/Show', [
-            'place' => $place
+            'place' => $place,
+            'placeCategories' => $placeCategories,
+            'places' => $places,
+
+            'seo' => [
+                'title' => $place->name,
+                'description' => $place->description,
+                'image' => $place->image->url,
+            ]
         ]);
     }
 }

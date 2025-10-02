@@ -42,7 +42,7 @@ export default function Index({hotel, reviews}) {
                             </div>
                             <div className="flex ml-smd-8">
                                 <MapPinIcon className="w-5 h-5 text-smd-soft-green text-lg" />
-                                <p>{hotel.address}</p>
+                                <p className="text-smd-gray-text">{hotel.address}</p>
                             </div>
                         </div>
                         <p className="text-smd-dark font-second font-bold text-4xl">
@@ -52,7 +52,6 @@ export default function Index({hotel, reviews}) {
                     <div className="w-full my-smd-16">
                         <HotelImageGallery images={hotel.images} />
                     </div>
-
                 </div>
                 <div className="sm-container grid lg:grid-cols-3 gap-smd-16 px-smd-16 md:px-0 pb-smd-32">
                     <div className="col-span-2">

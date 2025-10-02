@@ -35,8 +35,8 @@ export default function Index({post, related, post_category}) {
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute w-full top-0 h-smd-496 bg-smd-dark opacity-75"></div>
-                    <h1 className="text-smd-light px-smd-24 text-center text-4xl lg:text-7xl font-second z-10">{data.name}</h1>
-                    <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-500/15 mt-smd-16 text-smd-light px-smd-16 py-smd-8 rounded-full z-10">
+                    <h1 className="text-smd-light px-smd-24 text-center text-3xl lg:text-7xl font-second z-10">{data.name}</h1>
+                    <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-500/15 mt-smd-16 backdrop-blur-sm text-smd-light px-smd-16 py-smd-8 rounded-full z-10">
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Posts</p>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export default function Index({post, related, post_category}) {
                                     {data.created_at_formatted}
                                 </p>
                             </div>
-                            <h1 className="text-smd-dark text-center lg:text-left text-5xl font-second font-bold mb-smd-40 px-smd-16 2xl:px-0">
+                            <h1 className="text-smd-dark text-center lg:text-left text-2xl md:text-5xl font-second font-bold mb-smd-40 px-smd-16 2xl:px-0">
                                 {data.name}
                             </h1>
                             <div className="prose lg:prose-xl mb-smd-40 px-smd-16 text-justify w-full mx-auto xl:mx-0 2xl:px-0" dangerouslySetInnerHTML={{ __html: data.content }}>
