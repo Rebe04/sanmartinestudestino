@@ -1,8 +1,10 @@
 import MainLayout from "@/Layouts/MainLayout.jsx";
+import {Head} from "@inertiajs/react";
 
 export default function Index({event_categories}) {
     return(
         <MainLayout>
+            <Head title="Categorías de Eventos" />
             <div>
                 <h1>Lista de Eventos</h1>
                 <ul>

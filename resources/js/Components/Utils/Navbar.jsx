@@ -41,7 +41,7 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                                     </svg>
                                 </button>
                             </div>
-                            <Link href={route('routes.index')} className="hidden xl:block bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors">
+                            <Link href={route('places.index')} className="hidden xl:block bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors">
                                 Explora San Martín
                             </Link>
                             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden">
@@ -82,6 +82,7 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                                     </DropdownSm>
                                     <NavLink href={route('posts.index')}>Blog</NavLink>
                                     <NavLink href={route('contact-us')}>Contacto</NavLink>
+                                    <NavLink href={route('places.index')}>Explora San Martin</NavLink>
                                 </nav>
                             </div>
                         </div>

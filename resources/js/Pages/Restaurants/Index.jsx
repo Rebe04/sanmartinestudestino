@@ -2,7 +2,7 @@ import MainLayout from "@/Layouts/MainLayout.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 import RestaurantCard from "@/Components/Restaurants/RestaurantCard.jsx";
-import {Link, router} from "@inertiajs/react";
+import {Head, Link, router} from "@inertiajs/react";
 import Pagination from "@/Components/Utils/Pagination.jsx";
 
 export default function Index({restaurants, foodCategories, filters}) {
@@ -23,6 +23,7 @@ export default function Index({restaurants, foodCategories, filters}) {
     };
     return(
         <MainLayout>
+            <Head title="¿Donde Comer?" />
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -34,7 +35,6 @@ export default function Index({restaurants, foodCategories, filters}) {
                 <div className="sm-container">
                     {/* Barra de Filtros por Categoría */}
 
-                    {/* Grid de Restaurantes */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         <aside>
                             <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-32 mb-smd-32">
@@ -59,6 +59,8 @@ export default function Index({restaurants, foodCategories, filters}) {
 
                             </div>
                         </aside>
+
+                    {/* Grid de Restaurantes */}
                         <div className="grid px-smd-16 md:px-0 grid-cols-1 lg:grid-cols-2 lg:col-span-2 xl:col-span-3 md:pr-smd-16 xl:grid-cols-3 xl:pr-0 gap-6">
                             {restaurants.data.map(restaurant => (
                                 <RestaurantCard key={restaurant.id} restaurant={restaurant} />
@@ -77,7 +79,6 @@ export default function Index({restaurants, foodCategories, filters}) {
                     <div className="mt-12">
                         <Pagination links={restaurants.links} />
                     </div>
-                    {JSON.stringify(restaurants, null, 2)}
                 </div>
             </div>
         </MainLayout>

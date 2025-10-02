@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 export default function Pagination({ links = [] }) {
-    // No renderizar nada si la paginación no es necesaria
+    // No se renderiza nada si la paginación no es necesaria
     if (links.length <= 3) {
         return null;
     }
@@ -14,12 +14,16 @@ export default function Pagination({ links = [] }) {
                 const isFirst = index === 0;
                 const isLast = index === links.length - 1;
 
-                // Texto a mostrar: un ícono para el primero/último, o el número para los demás
-                let label = isFirst
-                    ? <ChevronLeftIcon className="h-5 w-5" />
-                    : isLast
-                        ? <ChevronRightIcon className="h-5 w-5" />
-                        : link.label;
+                // Determina qué mostrar: un ícono para el primero/último, o el número para los demás.
+                // Se usa 'dangerouslySetInnerHTML' para los labels que vienen de Laravel como "Previous" o "Next"
+                let label;
+                if (isFirst) {
+                    label = <ChevronLeftIcon className="h-5 w-5" />;
+                } else if (isLast) {
+                    label = <ChevronRightIcon className="h-5 w-5" />;
+                } else {
+                    label = link.label;
+                }
 
                 // Para links deshabilitados (página actual, "...")
                 if (!link.url) {
@@ -33,11 +37,13 @@ export default function Pagination({ links = [] }) {
                     );
                 }
 
-                // Para links habilitados
+                // Para links habilitados, se usa el componente <Link> de Inertia
                 return (
                     <Link
                         key={index}
                         href={link.url}
+                        preserveState
+                        preserveScroll
                         className={`flex items-center justify-center px-3 py-2 mx-1 text-sm transition-colors duration-300 border rounded-md hover:bg-smd-soft-green hover:text-white ${
                             link.active ? 'bg-smd-soft-green text-white' : 'bg-white text-gray-700'
                         }`}

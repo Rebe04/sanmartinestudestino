@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use App\Models\Place;
 use App\Models\PlaceCategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,11 +16,15 @@ class PlaceSeeder extends Seeder
 
     public function run(): void
     {
-        $placeCategoryIds = PlaceCategory::pluck('id');
+        $placeCategories = PlaceCategory::all();
         // Se Crean 15 lugares
-        Place::factory(15)->create([
-            // Para cada lugar creado, se asigna un ID de categoría aleatorio
-            'place_category_id' => $placeCategoryIds->random(),
-        ]);
+        $placeCategories->each(function ($category) {
+            Place::factory(5)->create([
+                'place_category_id' => $category->id,
+            ])->each(function ($place) {
+                    // Añadir imágenes (mínimo 1)
+                    $place->images()->saveMany(Image::factory(rand(1, 5))->make());
+                });
+        });
     }
 }

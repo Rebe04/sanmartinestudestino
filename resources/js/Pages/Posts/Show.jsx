@@ -47,7 +47,7 @@ export default function Index({post, related, post_category}) {
 
                     <div className="grid mx-auto max-w-smd-max grid-cols-1 lg:grid-cols-3 mb-smd-104 lg:gap-smd-48">
                         <div className="w-full col-span-2">
-                            <div className="flex justify-center lg:justify-start mb-smd-40 gap-smd-32">
+                            <div className="flex justify-center lg:justify-start mb-smd-40 gap-smd-32 px-smd-16 2xl:px-0">
                                 <p className="text-smd-gray-text flex items-center gap-smd-4">
                                     <span>
                                         <UserIcon className="h-smd-16 w-smd-16"/>
@@ -61,10 +61,10 @@ export default function Index({post, related, post_category}) {
                                     {data.created_at_formatted}
                                 </p>
                             </div>
-                            <h1 className="text-smd-dark text-center lg:text-left text-5xl font-second font-bold mb-smd-40">
+                            <h1 className="text-smd-dark text-center lg:text-left text-5xl font-second font-bold mb-smd-40 px-smd-16 2xl:px-0">
                                 {data.name}
                             </h1>
-                            <div className="prose lg:prose-xl mb-smd-40" dangerouslySetInnerHTML={{ __html: data.content }}>
+                            <div className="prose lg:prose-xl mb-smd-40 px-smd-16 text-justify w-full mx-auto xl:mx-0 2xl:px-0" dangerouslySetInnerHTML={{ __html: data.content }}>
 
                             </div>
                         </div>

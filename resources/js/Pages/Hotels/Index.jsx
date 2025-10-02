@@ -3,10 +3,12 @@ import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 import PriceFilter from "@/Components/Hotels/PriceFilter.jsx";
 import HotelCard from "@/Components/Hotels/HotelCard.jsx";
+import {Head} from "@inertiajs/react";
 
 export default function Index({ hotels, filters, priceRanges }) {
     return(
         <MainLayout>
+            <Head title="Donde Dormir" />
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
