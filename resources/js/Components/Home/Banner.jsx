@@ -87,7 +87,7 @@ export default function Banner() {
                         Vive la Tradición Llanera
                     </h3>
                     <div className="w-10/12">
-                        <h2 className="text-4xl md:text-[56px] xl:text-[80px] font-black mb-2 leading-tight text-white transition-all duration-300" style={{ fontFamily: 'Manrope' }}>
+                        <h2 className="text-4xl md:text-[56px] 2xl:text-[80px] font-black mb-2 leading-tight text-white transition-all duration-300" style={{ fontFamily: 'Manrope' }}>
                             {/*{slidesData[activeIndex].title}*/}
                             Las Cuadrillas de San Martín
                         </h2>
