@@ -20,10 +20,27 @@ class PlaceController extends Controller
             ->paginate(5)
             ->withQueryString();
 
+        $firstPlace = $places->first();
+        $ogImage = null;
+
+        if ($firstPlace && $firstPlace->image) {
+            // Si el primer lugar existe y tiene una imagen, se usa su URL
+            $ogImage = asset($firstPlace->image->url);
+        } else {
+            // Si no, se usa una imagen por defecto.
+            $ogImage = asset('images/seo/places-default.webp');
+        }
+
         return Inertia::render('Places/Index', [
             'places' => $places,
             'placeCategories' => $placeCategories,
-            'filters' => $request->only(['place_category'])
+            'filters' => $request->only(['place_category']),
+
+            'seo' => [
+            'title' => "Sitios de Interés Turístico",
+                'description' => "San Martín de los Llanos, el municipio más antiguo del Meta, te invita a sumergirte en su historia viva, su cultura emblemática y sus paisajes únicos. Fundado en 1585 como Medina de las Torres y refundado en 1641 como San Martín del Puerto, este rincón del Meta conserva intacta su autenticidad. A tan sólo aproximadamente 70 km de Villavicencio, sus campos, su gente y sus tradiciones te esperan.",
+            'image' => $ogImage
+        ]
         ]);
     }
 
