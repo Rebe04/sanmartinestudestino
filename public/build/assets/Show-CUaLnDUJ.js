@@ -1,1 +1,0 @@
-import{j as i}from"./app-B2xEnV2K.js";import{M as t}from"./MainLayout-BvVI-bIz.js";import"./NavLink-ioJp_Ec3.js";function o({route:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{o as default};
