@@ -28,7 +28,7 @@ export default function Index({places, placeCategories, filters}) {
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
-                    <h1 className="text-smd-light text-xl text-center md:text-5xl 2xl:text-7xl font bold font-second z-10">Nuestros Atractivos Turísticos</h1>
+                    <h1 className="text-smd-light text-3xl text-center md:text-5xl 2xl:text-7xl font-bold font-second z-10">Nuestros Atractivos Turísticos</h1>
                     <div className="border border-gray-300 flex items-center gap-smd-8 justify-center bg-gray-400/15 backdrop-blur-sm mt-smd-16 text-smd-light px-smd-16 py-smd-8 rounded-full z-10">
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Lugares</p>
                     </div>

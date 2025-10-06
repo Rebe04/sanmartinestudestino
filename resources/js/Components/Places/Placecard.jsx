@@ -27,7 +27,7 @@ export default function PlaceCard({place}) {
                           className="inline-flex items-center justify-between gap-2 px-smd-16 md:px-smd-16 2xl:px-smd-32 font-bold text-smd-light py-smd-8 xl:py-smd-16 rounded-full mt-smd-16 md:mt-smd-32 bg-smd-soft-green hover:bg-smd-yellow transition-colors">
                         Ver Detalles <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
                     </Link>
-                    <div className="flex mt-smd-32 md:mt-0 items-center lg:gap-smd-8 2xl:gap-smd-16">
+                    <div className="flex mt-smd-32 md:mt-0 items-center gap-smd-8 2xl:gap-smd-16">
                         <span className="text-smd-gray-text text-wrap">Precio Entrada:</span>
                         <span className="text-3xl font-second font-semibold text-smd-dark">
                         {place.price}
