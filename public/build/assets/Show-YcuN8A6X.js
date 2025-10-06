@@ -1,1 +1,0 @@
-import{j as i}from"./app-VMWgTOLK.js";import{M as t}from"./MainLayout-CNCTA4gd.js";import"./NavLink-eQM6f6ga.js";function o({event:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{o as default};
