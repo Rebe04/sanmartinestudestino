@@ -8,7 +8,7 @@ export default function PostCard({ post }) {
         <div className="h-full">
             <div className="overflow-hidden rounded-2xl h-smd-280 md:h-smd-352 2xl:h-smd-496 ">
                 <img src={image.url} alt={name}
-                     className="w-full object-cover"/>
+                     className="w-full h-full object-cover"/>
             </div>
             <div className="py-smd-16 2xl:py-smd-32">
                 <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">

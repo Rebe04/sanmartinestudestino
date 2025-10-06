@@ -20,15 +20,15 @@ export default function Index({posts, post_categories}) {
                         <p>Home</p> <ChevronRightIcon className={`h-smd-16 w-smd-16 `}/> <p>Blog</p>
                     </div>
                 </div>
-                <div className="sm-container mx-auto grid lg:grid-cols-3 gap-smd-32 my-smd-80">
-                    <div className="col-span-2">
+                <div className="sm-container mx-auto grid lg:grid-cols-3 gap-smd-32 py-smd-64">
+                    <div className="lg:col-span-2">
                         {data.map((post, index) => (
                             <div className="mb-smd-32" key={index}>
                                 <PostCard post={post} />
                             </div>
                         ))}
                         {/* Paginación */}
-                        <div className="mt-12">
+                        <div className="my-smd-32">
                             <Pagination links={posts.meta.links} />
                         </div>
                     </div>
