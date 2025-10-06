@@ -10,7 +10,7 @@ export default function SideBar({categories, relatedPosts = [] }) {
                     <ul>
                         {categories.map((postCategory, index) => (
                             <li className="bg-smd-light p-smd-8 2xl:p-smd-16 cursor pointer mt-smd-8 rounded-lg text-center lg:text-left hover:bg-smd-yellow hover:text-smd-light" key={index}>
-                                <Link href={route('post_categories.show', postCategory)}>
+                                <Link href={route('post.categories.show', postCategory)}>
                                     {postCategory.name}
                                 </Link>
                             </li>

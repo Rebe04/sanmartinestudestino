@@ -23,12 +23,12 @@ Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
 // -- Rutas para EventCategories --
-Route::get('/event-categories', [EventCategoryController::class, 'index'])->name('events.index');
-Route::get('/event-categories/{eventCategory}', [EventCategoryController::class, 'show'])->name('events.show');
+Route::get('/event-categories', [EventCategoryController::class, 'index'])->name('event.categories.index');
+Route::get('/event-categories/{eventCategory}', [EventCategoryController::class, 'show'])->name('event.categories.show');
 
 // -- Rutas para FoodCategories --
-Route::get('/food-categories', [FoodCategoryController::class, 'index'])->name('events.index');
-Route::get('/food-categories/{foodCategory}', [FoodCategoryController::class, 'show'])->name('events.show');
+Route::get('/food-categories', [FoodCategoryController::class, 'index'])->name('food.categories.index');
+Route::get('/food-categories/{foodCategory}', [FoodCategoryController::class, 'show'])->name('food.categories.show');
 
 // -- Rutas para Hotels --
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels.index');
@@ -51,8 +51,8 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
 
 // -- Rutas para PostCategories --
-Route::get('/post-categories', [PostCategoryController::class, 'index'])->name('post_categories.index');
-Route::get('/post-categories/{postCategory}', [PostCategoryController::class, 'show'])->name('post_categories.show');
+Route::get('/post-categories', [PostCategoryController::class, 'index'])->name('post.categories.index');
+Route::get('/post-categories/{postCategory}', [PostCategoryController::class, 'show'])->name('post.categories.show');
 
 Route::get('/nuestra-historia', function () {
     return Inertia::render('AboutUs');
