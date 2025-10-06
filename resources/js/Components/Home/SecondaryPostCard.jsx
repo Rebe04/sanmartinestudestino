@@ -5,7 +5,7 @@ export default function  SecondaryPostCard ({ post }) {
     return (
         <div
             className="group bg-white max-h-smd-208 overflow-hidden cursor-pointer rounded-2xl flex flex-1 items-center gap-x-4 transition-all duration-300 hover:shadow-2xl">
-            <div className="w-3/5 rounded-l-xl overflow-hidden">
+            <div className="w-3/5 h-full rounded-l-xl overflow-hidden">
                 <img src={post.image_url} alt={post.name}
                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
             </div>
@@ -20,7 +20,7 @@ export default function  SecondaryPostCard ({ post }) {
                         {post.name.length <= 20 ? (post.name):(post.name.substring(0, 60)+"...")}
                     </Link>
                     <Link href={route('posts.show', post)} className="hover:text-smd-soft-green transition-colors hidden lg:block">
-                        {post.name.length <= 50 ? (post.name):(post.name.substring(0, 60)+"...")}
+                        {post.name.length <= 40 ? (post.name):(post.name.substring(0, 40)+"...")}
                     </Link>
                 </h4>
                 <Link href={route('posts.show', post)}
