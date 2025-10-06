@@ -36,7 +36,7 @@ export default function Index({places, placeCategories, filters}) {
                 <div className="sm-container ">
                     <div className="grid mt-smd-64 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 lg:gap-smd-32 lg:px-smd-32 xl:px-smd-0">
                         <aside>
-                            <div className="bg-gray-200/80 rounded-xl mx-smd-24 lg:mx-0 p-smd-32 mb-smd-32">
+                            <div className="bg-gray-200/80 rounded-xl p-smd-16 mb-smd-32">
                                 <h2 className="text-2xl text-center lg:text-left font-second font-bold text-smd-dark mb-smd-16">Filtra por Tipos de Lugares</h2>
                                 <ul className="flex flex-col gap-smd-8">
                                     {placeCategories.map(category => (
@@ -58,7 +58,7 @@ export default function Index({places, placeCategories, filters}) {
 
                             </div>
                         </aside>
-                        <div className="pr-smd-16 lg:pr-smd-0 md:col-span-2 xl:col-span-3">
+                        <div className="lg:pr-smd-16 lg:pr-smd-0 md:col-span-2 xl:col-span-3">
                             {places.data.map((place, index) => (
                                 <div className="mb-smd-32" key={index}>
                                     <PlaceCard place={place} />
