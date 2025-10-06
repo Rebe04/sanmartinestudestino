@@ -1,10 +1,11 @@
-import {CalendarIcon, MapPinIcon} from "@heroicons/react/24/outline/index.js";
+
+import {MapPinIcon} from "@heroicons/react/24/outline/index.js";
 import {Link} from "@inertiajs/react";
 import {ArrowRightIcon} from "@heroicons/react/16/solid/index.js";
-import TruncatedText from "@/Components/Utils/TruncatedText.jsx";
 
 export default function PlaceCard({place}) {
     const {name, image, address} = place;
+
     return (
         <div className="h-full">
             <div className="overflow-hidden rounded-2xl h-smd-496 ">
@@ -21,14 +22,13 @@ export default function PlaceCard({place}) {
                         {name}
                     </Link>
                 </h3>
-                <TruncatedText text={place.description} maxLength={120} />
-                <div className="flex flex-col-reverse md:flex-row justify-between">
+                <div className="flex flex-col-reverse md:flex-row justify-between xl:items-center">
                     <Link href={route('places.show', place)}
                           className="inline-flex items-center justify-between gap-2 px-smd-16 md:px-smd-16 2xl:px-smd-32 font-bold text-smd-light py-smd-8 xl:py-smd-16 rounded-full mt-smd-16 md:mt-smd-32 bg-smd-soft-green hover:bg-smd-yellow transition-colors">
                         Ver Detalles <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
                     </Link>
-                    <div className="flex mt-smd-32 md:mt-0 items-center">
-                        <span className="text-smd-gray-text 2xl:mr-smd-8 text-wrap">Precio Entrada:</span>
+                    <div className="flex mt-smd-32 md:mt-0 items-center lg:gap-smd-8 2xl:gap-smd-16">
+                        <span className="text-smd-gray-text text-wrap">Precio Entrada:</span>
                         <span className="text-3xl font-second font-semibold text-smd-dark">
                         {place.price}
                     </span>

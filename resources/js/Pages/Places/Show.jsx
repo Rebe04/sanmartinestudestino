@@ -22,7 +22,7 @@ export default function Index({place, placeCategories, places}) {
                     <div className="sm-container">
                             <div className="flex flex-col md:flex-row md:justify-between items-center w-full bg-gray-200 p-smd-32 rounded-2xl">
                                 <div className="flex flex-col md:flex-row items-center text-gray-500">
-                                    <div className="flex">
+                                    <div className="flex gap-smd-8">
                                         <MapPinIcon className="w-5 h-5 text-smd-soft-green text-lg" />
                                         <p className="text-gray-500">{place.address}</p>
                                     </div>

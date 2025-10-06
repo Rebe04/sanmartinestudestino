@@ -44,6 +44,10 @@ export default function Index({places, placeCategories, filters}) {
                     <p className="text-smd-gray-text text-justify">
                         La economía local gira sobre la ganadería extensiva, la agricultura de subsistencia, el cultivo de palma, cítricos y otros productos llaneros. Aquí la gastronomía típica, con sus sabores llaneros, la música, el joropo y las cuadrillas de San Martín son parte esencial del diario vivir. Entre sus tesoros arquitectónicos destaca la Iglesia San Martín de Tours, construida en adobe y madera, rodeada de casonas coloniales, y el vital Caño Camoa, rincón natural de agua y frescura.
                     </p>
+                    <br/>
+                    <p className="text-smd-gray-text text-justify">
+                        Te invitamos a visitar San Martín de los Llanos, disfrutar de su gastronomía, vivir sus tradiciones y dejarte envolver por su encanto. Porque quien llega a San Martín, siempre encuentra razones para volver.
+                    </p>
                     <div className="grid mt-smd-64 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 lg:gap-smd-32 lg:px-smd-32 xl:px-0">
                         <aside>
                             <div className="bg-gray-200/80 rounded-xl p-smd-16 mb-smd-32">
