@@ -17,7 +17,7 @@ export default function  SecondaryPostCard ({ post }) {
                 </div>
                 <h4 className="lg:text-2xl font-bold font-second text-smd-dark leading-tight">
                     <Link href={route('posts.show', post)} className="hover:text-smd-soft-green block lg:hidden transition-colors">
-                        {post.name.length <= 20 ? (post.name):(post.name.substring(0, 20)+"...")}
+                        {post.name.length <= 35 ? (post.name):(post.name.substring(0, 35)+"...")}
                     </Link>
                     <Link href={route('posts.show', post)} className="hover:text-smd-soft-green transition-colors hidden lg:block">
                         {post.name.length <= 50 ? (post.name):(post.name.substring(0, 50)+"...")}
