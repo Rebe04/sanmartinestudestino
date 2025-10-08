@@ -19,7 +19,7 @@ import SocialIcon from "@/Components/Utils/SocialIcon.jsx";
 
 const slidesData = [
 
-    { image: slide1, pretitle: 'Vive la Tradición Llanera', title: 'Las Cuadrillas de San Martín', subtitle: 'Una experiencia única que fusiona historia, destreza y folclor.' },
+    { image: slide1, pretitle: 'Vive la Tradición Llanera', title: 'San Martín es Tu Destino', subtitle: 'Quien llega a San Martín, siempre encuentra razones para volver.' },
 
     { image: slide2, pretitle: 'Naturaleza Pura', title: 'Explora Paisajes Inolvidables', subtitle: 'Descubre cascadas, ríos cristalinos y la inmensidad de la sabana.' },
 
@@ -89,12 +89,12 @@ export default function Banner() {
                     <div className="w-10/12">
                         <h2 className="text-4xl md:text-[56px] 2xl:text-[80px] font-black mb-2 leading-tight text-white transition-all duration-300" style={{ fontFamily: 'Manrope' }}>
                             {/*{slidesData[activeIndex].title}*/}
-                            Las Cuadrillas de San Martín
+                            San Martín es Tu Destino
                         </h2>
                     </div>
                     <p className="text-white text-xl">
                         {/*{slidesData[activeIndex].subtitle}*/}
-                        Una experiencia única que fusiona historia, destreza y folclor.
+                        Quien llega a San Martín, siempre encuentra razones para volver.
                     </p>
                 </div>
             </div>
