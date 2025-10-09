@@ -6,8 +6,6 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 import ApplicationLogo from "@/Components/ApplicationLogo.jsx";
-
-// Asumiré que tienes una imagen de fondo en esta ruta
 import loginImage from '@/assets/images/login-image.webp';
 
 export default function Login({ status, canResetPassword }) {
