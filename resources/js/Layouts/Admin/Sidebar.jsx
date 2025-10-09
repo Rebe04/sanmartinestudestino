@@ -49,7 +49,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             {/* Logo */}
             <div className="flex items-center justify-center h-16 border-b border-gray-700">
                 <Link href="/">
-                    <ApplicationLogo className={`w-auto transition-all duration-300 ${isOpen ? 'h-10' : 'h-8'}`} />
+                    <ApplicationLogo white={true} className={`w-auto transition-all duration-300 ${isOpen ? 'h-10' : 'h-8'}`} />
                 </Link>
             </div>
 

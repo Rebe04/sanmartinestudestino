@@ -1,1 +1,0 @@
-import{j as i}from"./app-C28HKiD-.js";import{M as t}from"./MainLayout-Bmott_9R.js";import"./logoWhite-BzQEmrQ3.js";import"./NavLink-LBf5r2sB.js";function a({event:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{a as default};

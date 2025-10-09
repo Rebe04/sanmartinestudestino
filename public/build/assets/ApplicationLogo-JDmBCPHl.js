@@ -1,1 +1,0 @@
-import{j as o}from"./app-C28HKiD-.js";import{l as s}from"./logoWhite-BzQEmrQ3.js";function i(t){return o.jsx("img",{className:"w-smd-96",src:s,alt:"Logo San Martin Es Tu Destino Blanco"})}export{i as A};

@@ -75,6 +75,11 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+Route::get('/admin', function () {
+    return redirect()->route('admin.dashboard');
+})->middleware(['auth', 'verified']);
+
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     require __DIR__.'/admin.php';
 });
