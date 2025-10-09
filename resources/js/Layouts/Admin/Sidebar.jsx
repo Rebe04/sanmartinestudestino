@@ -41,9 +41,10 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
     return (
         <aside
-            className={`bg-smd-dark text-gray-300 flex flex-col transition-all duration-300 ease-in-out ${
-                isOpen ? 'w-64' : 'w-20'
-            }`}
+            className={`bg-smd-dark text-gray-300 flex flex-col h-full z-30
+                fixed inset-y-0 left-0 transform transition-all duration-300 ease-in-out
+                lg:relative lg:translate-x-0
+                ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:w-20'}`}
         >
             {/* Logo */}
             <div className="flex items-center justify-center h-16 border-b border-gray-700">
