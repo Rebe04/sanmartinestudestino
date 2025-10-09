@@ -111,12 +111,12 @@ export default function Login({ status, canResetPassword }) {
                                 Iniciar Sesión
                             </PrimaryButton>
 
-                            <Link
-                                href={route('register')}
-                                className="mt-4 underline text-sm text-gray-600 hover:text-gray-900"
-                            >
-                                ¿No tienes una cuenta? Regístrate
-                            </Link>
+                            {/*<Link*/}
+                            {/*    href={route('register')}*/}
+                            {/*    className="mt-4 underline text-sm text-gray-600 hover:text-gray-900"*/}
+                            {/*>*/}
+                            {/*    ¿No tienes una cuenta? Regístrate*/}
+                            {/*</Link>*/}
                         </div>
                     </form>
                 </div>
