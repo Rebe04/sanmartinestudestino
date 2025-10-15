@@ -2,14 +2,15 @@ import MainLayout from "@/Layouts/MainLayout.jsx";
 import {Head} from "@inertiajs/react";
 import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
-import {MapPinIcon, StarIcon} from "@heroicons/react/16/solid/index.js";
+import {MapPinIcon} from "@heroicons/react/16/solid/index.js";
 import PlaceSideBar from "@/Components/Places/PlaceSideBar.jsx";
 import PlaceImageGallery from "@/Components/Places/PLaceImageGallery.jsx";
+import React from "react";
 
-export default function Index({place, placeCategories, places}) {
+export default function Show({place, placeCategories, places}) {
     return(
-        <MainLayout>
-            <Head title={place.name} />
+        <>
+            <Head title={`Visita: ${place.name}`} />
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -42,6 +43,8 @@ export default function Index({place, placeCategories, places}) {
                     </div>
                 </div>
             </div>
-        </MainLayout>
+        </>
     )
 }
+
+Show.layout = page => <MainLayout children={page} title="Visita:" />;

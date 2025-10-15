@@ -35,7 +35,7 @@ class HotelController extends Controller
         ->paginate(5, ['*'], 'reviews_page'); // Pagina 5 resultados por página
         return Inertia::render('Hotels/Show', [
             'hotel' => $hotel,
-            'reviews' => $reviews, // 3. Pasa el objeto de paginación de reseñas como una prop separada
+            'reviews' => $reviews, // Pasa el objeto de paginación de reseñas como una prop separada
         ]);
     }
 }

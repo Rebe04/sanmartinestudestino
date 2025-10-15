@@ -7,11 +7,11 @@ import DondeComer from "@/Components/Home/DondeComer.jsx";
 import DondeDormir from "@/Components/Home/DondeDormir.jsx";
 import NextEvent from "@/Components/Home/NextEvent.jsx";
 import PostsSection from "@/Components/Home/PostsSection.jsx";
+import React from "react";
 
 export default function Welcome({ auth, laravelVersion, phpVersion, posts }) {
     return (
-        <MainLayout>
-            <Head title="Inicio" />
+        <div>
             <Banner/>
             <AboutSection/>
             <PostsSection posts={posts} />
@@ -19,8 +19,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion, posts }) {
             <DondeComer/>
             <DondeDormir/>
             <NextEvent/>
-        </MainLayout>
+        </div>
     );
 }
+
+Welcome.layout = page => <MainLayout children={page} title="Inicio" />;
 
 

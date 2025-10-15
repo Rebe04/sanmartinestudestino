@@ -4,11 +4,12 @@ import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 import PriceFilter from "@/Components/Hotels/PriceFilter.jsx";
 import HotelCard from "@/Components/Hotels/HotelCard.jsx";
 import {Head} from "@inertiajs/react";
+import Pagination from "@/Components/Utils/Pagination.jsx";
+import React from "react";
 
 export default function Index({ hotels, filters, priceRanges }) {
     return(
-        <MainLayout>
-            <Head title="Donde Dormir" />
+        <div>
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -39,11 +40,17 @@ export default function Index({ hotels, filters, priceRanges }) {
                                     <p className="text-gray-500">No se encontraron hoteles con los filtros seleccionados.</p>
                                 </div>
                             )}
+                            {/* Paginación */}
+                            <div className="my-smd-32">
+                                <Pagination links={hotels.links} />
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </MainLayout>
+        </div>
     )
 }
+
+Index.layout = page => <MainLayout children={page} title="Donde Dormir" />;

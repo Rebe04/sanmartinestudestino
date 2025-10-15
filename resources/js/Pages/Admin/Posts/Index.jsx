@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AdminLayout from "@/Layouts/Admin/AdminLayout.jsx";
 import Pagination from "@/Components/Utils/Pagination.jsx";
-import {PencilSquareIcon, PlusIcon, TrashIcon} from "@heroicons/react/24/outline/index.js";
+import {EyeIcon, PencilSquareIcon, PlusIcon, TrashIcon} from "@heroicons/react/24/outline/index.js";
 import {Head, Link, useForm} from "@inertiajs/react";
 import Modal from "@/Components/Utils/Modal.jsx";
 import SecondaryButton from "@/Components/SecondaryButton.jsx";
@@ -91,8 +91,16 @@ export default function Index({ posts }) {
                             <td className="p-4">
                                 <div className="flex gap-2">
                                     <Link
-                                        href={route('admin.posts.edit', post)}
+                                        target="_blank"
+                                        href={route('posts.show', post)}
                                         className="text-blue-600 hover:text-blue-900"
+                                        title="Editar"
+                                    >
+                                        <EyeIcon className="h-5 w-5" />
+                                    </Link>
+                                    <Link
+                                        href={route('admin.posts.edit', post)}
+                                        className="text-orange-400 hover:text-orange-900"
                                         title="Editar"
                                     >
                                         <PencilSquareIcon className="h-5 w-5" />

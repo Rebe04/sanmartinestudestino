@@ -1,16 +1,18 @@
 import MainLayout from "@/Layouts/MainLayout.jsx";
-import FeaturedPostCard from "@/Components/Home/FeaturedPostCard.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 import PostCard from "@/Components/Posts/PostsCard.jsx";
 import SideBar from "@/Components/Posts/SideBar.jsx";
+import React from "react";
+import {Head} from "@inertiajs/react";
 
-export default function Index({posts, postCategory, postCategories}) {
+export default function Show({posts, postCategory, postCategories}) {
     const data = posts.data;
     const categoryData = postCategory.data;
     const categories = postCategories.data;
     return(
         <MainLayout>
+            <Head title={`Posts de Categoría: ${data.name}`}/>
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -34,3 +36,5 @@ export default function Index({posts, postCategory, postCategories}) {
         </MainLayout>
     )
 }
+
+Show.layout = page => <MainLayout children={page} title="Posts de Categoría:" />;

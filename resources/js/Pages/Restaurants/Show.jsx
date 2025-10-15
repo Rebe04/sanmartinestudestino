@@ -5,13 +5,16 @@ import RestaurantImageGallery from "@/Components/Restaurants/RestaurantImageGall
 import {MapPinIcon, StarIcon} from "@heroicons/react/16/solid/index.js";
 import DishCard from "@/Components/Restaurants/DishCard.jsx";
 import ReviewsList from "@/Components/Utils/ReviewsList.jsx";
+import React from "react";
+import {Head} from "@inertiajs/react";
 
-export default function Index({restaurant, reviews}) {
+export default function Show({restaurant, reviews}) {
     const totalStars = 5;
     const fullStars = Math.round(restaurant.reviews_avg_rating || 0);
     const dishes = restaurant.dishes
     return(
-        <MainLayout>
+        <>
+            <Head title={`Comer en: ${restaurant.name}`} />
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -73,6 +76,8 @@ export default function Index({restaurant, reviews}) {
                     <ReviewsList reviews={reviews} />
                 </div>
             </div>
-        </MainLayout>
+        </>
     )
 }
+
+Show.layout = page => <MainLayout children={page} title="Comer en:" />;

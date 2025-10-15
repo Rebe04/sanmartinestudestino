@@ -1,18 +1,18 @@
 import MainLayout from "@/Layouts/MainLayout.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
-import wallpaper from "@/assets/images/wallpaper-01.png";
 import {CalendarIcon, ChevronRightIcon, UserIcon} from "@heroicons/react/24/outline";
-import {Head, Link} from "@inertiajs/react";
+import {Head} from "@inertiajs/react";
 import SideBar from "@/Components/Posts/SideBar.jsx";
+import React from "react";
 
-export default function Index({post, related, post_category}) {
+export default function Show({post, related, post_category}) {
     const data = post.data;
     const relatedPosts = related.data;
     const categories = post_category.data;
 
     return(
-        <MainLayout>
-            <Head>
+        <>
+            <Head title={`Post: ${data.name}`}>
                 {/* Título de la página */}
                 <title>{data.name}</title>
 
@@ -72,6 +72,8 @@ export default function Index({post, related, post_category}) {
                     </div>
                 </div>
             </div>
-        </MainLayout>
+        </>
     )
 }
+
+Show.layout = page => <MainLayout children={page} title="Post:" />;

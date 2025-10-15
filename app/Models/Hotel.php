@@ -13,13 +13,17 @@ class Hotel extends Model
     protected $fillable = [
         'name',
         'address',
+        'slug',
         'description',
         'price_range',
         'instagram',
+        'facebook',
+        'web',
         'youtube',
         'phone',
         'email',
         'web',
+        'facebook',
     ];
 
     public function getRouteKeyName()

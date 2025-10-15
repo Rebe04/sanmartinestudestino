@@ -4,7 +4,7 @@ import {Link} from "@inertiajs/react";
 export default function FeaturedPostCard ({ post }) {
     return (
         <div className="group rounded-2xl overflow-hidden h-full cursor-pointer bg-white transition-all duration-300 hover:shadow-2xl">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden max-h-smd-256">
                 <img src={post.image_url} alt={post.name}
                      className="w-full object-cover transition-transform duration-500 group-hover:scale-110"/>
             </div>

@@ -1,10 +1,10 @@
 import MainLayout from "@/Layouts/MainLayout.jsx";
 import blogImage from "@/assets/images/banner/1.webp";
 import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
+import React from "react";
 
 export default function Cuadrillas () {
     return (
-        <MainLayout>
             <div className="min-h-screen w-full">
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -14,6 +14,7 @@ export default function Cuadrillas () {
                     </div>
                 </div>
             </div>
-        </MainLayout>
     )
 }
+
+Cuadrillas.layout = page => <MainLayout children={page} title="Cuadrillas" />;

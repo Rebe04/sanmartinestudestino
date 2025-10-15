@@ -19,10 +19,18 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             active: isActive('/admin/posts') || isActive('/admin/post-categories'),
             children: [
                 { name: 'Todos los Posts', href: route('admin.posts.index'), active: isActive('/admin/posts') },
-                { name: 'Categorías', href: '#', active: isActive('/admin/post-categories') }, // Reemplaza '#' con la ruta real
+                { name: 'Categorías', href: route('admin.post-categories.index'), active: isActive('/admin/post-categories') },
             ]
         },
-        { name: 'Hoteles', href: route('hotels.index'), icon: BuildingOffice2Icon, active: isActive('/admin/hotels') },
+        {
+            name: 'Hoteles',
+            icon: BuildingOffice2Icon,
+            active: isActive('/admin/hotels') || isActive('/admin/amenities'),
+            children: [
+                { name: 'Todos los Hoteles', href: route('admin.hotels.index'), active: isActive('/admin/hotels') },
+                { name: 'Comodidades', href: route('admin.amenities.index'), active: isActive('/admin/amenities') },
+            ]
+        },
         {
             name: 'Restaurantes',
             icon: BuildingStorefrontIcon,

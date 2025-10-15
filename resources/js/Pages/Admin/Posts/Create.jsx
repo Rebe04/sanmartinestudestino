@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AdminLayout from '@/Layouts/Admin/AdminLayout';
-import { Head, useForm } from '@inertiajs/react';
+import {Head, Link, useForm} from '@inertiajs/react';
 import ReactQuill from 'react-quill';
 import CreatableSelect from "@/Components/Utils/CreatableSelect.jsx";
 import he from 'he';
@@ -186,7 +186,8 @@ export default function Create({ postCategories }){
                         </div>
                     </div>
 
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-6 flex justify-end items-center gap-smd-16">
+                        <Link href={route('admin.posts.index')} className="text-gray-600 hover:underline mr-4">Cancelar</Link>
                         <button type="submit" disabled={processing} className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400">
                             Crear Post
                         </button>

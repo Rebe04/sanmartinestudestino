@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import AdminLayout from '@/Layouts/Admin/AdminLayout';
-import { Head, useForm, router } from '@inertiajs/react';
+import {Head, useForm, router, Link} from '@inertiajs/react';
 import ReactQuill from 'react-quill';
 import CreatableSelect from '@/Components/Utils/CreatableSelect';
 import 'react-quill/dist/quill.snow.css';
@@ -182,7 +182,8 @@ export default function Edit({ post, postCategories }) {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-6 flex justify-end items-center gap-smd-16">
+                        <Link href={route('admin.posts.index')} className="text-gray-600 hover:underline mr-4">Cancelar</Link>
                         <button type="submit" disabled={processing} className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400">
                             Actualizar Post
                         </button>

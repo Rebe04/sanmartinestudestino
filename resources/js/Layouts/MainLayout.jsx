@@ -8,7 +8,7 @@ import SideMenu from "@/Components/Utils/SideMenu.jsx";
 import Navbar from "@/Components/Utils/Navbar.jsx";
 import Lenis from "@studio-freight/lenis";
 
-export default function MainLayout({ children }) {
+export default function MainLayout({ children, title }) {
     const [isLoading, setIsLoading] = useState(true);
     const [isFadingOut, setIsFadingOut] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,7 +45,8 @@ export default function MainLayout({ children }) {
 
     return (
         <div className="min-h-screen w-full bg-gray-50">
-            <Head>
+            <Head
+                title={title} >
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
                 <link
