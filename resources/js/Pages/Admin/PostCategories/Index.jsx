@@ -25,7 +25,7 @@ export default function Index({ postCategories }) {
 
     const deleteCategory = (e) => {
         e.preventDefault();
-        destroy(route('admin.post-categories.destroy', categoryToDelete.id), {
+        destroy(route('admin.post-categories.destroy', categoryToDelete.slug), {
             onSuccess: () => closeModal(),
         });
     };

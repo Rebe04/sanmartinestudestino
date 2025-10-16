@@ -80,7 +80,6 @@ class PostCategoryController extends Controller
      */
     public function destroy(PostCategory $postCategory)
     {
-        // Opcional: Añadir lógica para prevenir borrar categorías que tienen posts
         if ($postCategory->posts()->count() > 0) {
             return redirect()->route('admin.post-categories.index')->with('error', 'No se puede eliminar una categoría que tiene posts asociados.');
         }

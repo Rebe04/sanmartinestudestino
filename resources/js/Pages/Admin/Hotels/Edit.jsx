@@ -155,7 +155,7 @@ export default function Edit({ hotel, amenities }) {
                     {errors.images && <p className="text-red-500 text-xs mt-1">{errors.images}</p>}
                 </div>
 
-                <div className="flex justify-end gap-4">
+                <div className="mt-6 flex justify-end items-center gap-smd-16">
                     <Link href={route('admin.hotels.index')} className="px-4 py-2 text-gray-600">Cancelar</Link>
                     <PrimaryButton disabled={processing} className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400">Actualizar Hotel</PrimaryButton>
                 </div>

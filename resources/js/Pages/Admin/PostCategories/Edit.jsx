@@ -11,17 +11,15 @@ export default function Edit({ postCategory }) {
     const { data, setData, patch, processing, errors } = useForm({
         name: postCategory.data.name || '',
     });
-
     const submit = (e) => {
         e.preventDefault();
-        patch(route('admin.post-categories.update', postCategory.data.id));
+        patch(route('admin.post-categories.update', postCategory.data.slug));
     };
 
     return (
         <>
             <Head title={`Editar: ${postCategory.data.name}`} />
             <h1 className="text-3xl font-bold text-smd-dark">Editar Categoría</h1>
-
             <div className="mt-6 max-w-2xl bg-white rounded-lg shadow-md p-6">
                 <form onSubmit={submit}>
                     <div>

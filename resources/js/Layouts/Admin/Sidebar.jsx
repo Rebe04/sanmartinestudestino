@@ -36,8 +36,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             icon: BuildingStorefrontIcon,
             active: isActive('/admin/restaurants') || isActive('/admin/food-categories'),
             children: [
-                { name: 'Todos los Restaurantes', href: route('restaurants.index'), active: isActive('/admin/restaurants') },
-                { name: 'Categorías', href: '#', active: isActive('/admin/food-categories') }, // Reemplaza '#' con la ruta real
+                { name: 'Todos los Restaurantes', href: route('admin.restaurants.index'), active: isActive('/admin/restaurants') },
+                { name: 'Categorías', href: route('admin.food-categories.index'), active: isActive('/admin/food-categories') }, // Reemplaza '#' con la ruta real
             ]
         },
         // Aquí se pueden añadir Lugares y Eventos con la misma estructura de 'children'

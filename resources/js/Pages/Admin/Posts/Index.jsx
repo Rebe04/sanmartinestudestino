@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AdminLayout from "@/Layouts/Admin/AdminLayout.jsx";
 import Pagination from "@/Components/Utils/Pagination.jsx";
-import {EyeIcon, PencilSquareIcon, PlusIcon, TrashIcon} from "@heroicons/react/24/outline/index.js";
+import {EyeIcon, PencilSquareIcon, PlusIcon, TrashIcon, ClipboardDocumentIcon, CheckIcon, QrCodeIcon} from "@heroicons/react/24/outline/index.js";
 import {Head, Link, useForm} from "@inertiajs/react";
 import Modal from "@/Components/Utils/Modal.jsx";
 import SecondaryButton from "@/Components/SecondaryButton.jsx";
@@ -19,6 +19,46 @@ export default function Index({ posts }) {
         setConfirmingPostDeletion(true);
     };
 
+    const [copiedPostId, setCopiedPostId] = useState(null);
+
+    const handleCopyClick = (post) => {
+        const postUrl = route('posts.show', post);
+        navigator.clipboard.writeText(postUrl).then(() => {
+            setCopiedPostId(post.id);
+            setTimeout(() => {
+                setCopiedPostId(null);
+            }, 2000);
+        }).catch(err => {
+            console.error('Error al copiar la URL: ', err);
+            alert('No se pudo copiar la URL.');
+        });
+    };
+
+    const handleQrDownload = (post) => {
+        const postUrl = route('posts.show', post);
+        const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(postUrl)}`;
+
+        fetch(qrCodeApiUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+
+                const link = document.createElement('a');
+                link.href = url;
+
+                link.setAttribute('download', `qr-${post.slug}.png`);
+
+                document.body.appendChild(link);
+                link.click();
+
+                link.parentNode.removeChild(link);
+                window.URL.revokeObjectURL(url);
+            }).catch(err => {
+            console.error('Error al descargar el QR:', err);
+            alert('No se pudo descargar el código QR.');
+        });
+    };
+
     const closeModal = () => {
         setConfirmingPostDeletion(false);
         setPostToDelete(null);
@@ -33,13 +73,13 @@ export default function Index({ posts }) {
 
     return (
         <div>
-            <Head title="Gestionar Posts" />
+            <Head title="Gestionar Blog" />
 
             {/* --- Cabecera de la Página --- */}
             <div className="flex justify-between items-center mb-6 gap-smd-16">
                 <h1 className="text-3xl font-bold text-smd-dark">Posts del Blog</h1>
                 <Link
-                    href={route('admin.posts.create')} // Apunta a la ruta para crear un nuevo post
+                    href={route('admin.posts.create')}
                     className="inline-flex items-center gap-2 text-sm md:text-smd-16 bg-smd-soft-green text-white font-bold px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
                 >
                     <PlusIcon className="h-5 w-5" />
@@ -59,67 +99,92 @@ export default function Index({ posts }) {
                     </tr>
                     </thead>
                     <tbody>
-                    {data.map((post) => (
-                        <tr key={post.id} className="border-b border-gray-200 hover:bg-gray-50">
-                            <td className="p-4 flex items-center">
-                                <img
-                                    src={post.image_url}
-                                    alt={post.name}
-                                    className="w-10 h-10 rounded-md object-cover mr-4"
-                                />
-                                <div>
-                                    <p className="font-bold text-smd-dark">{post.name}</p>
-                                    <p className="text-xs text-gray-500">Por: {post.user.name}</p>
-                                </div>
-                            </td>
-                            <td className="p-4 text-gray-700">
+                    {data.map((post) => {
+                        const postUrl = route('posts.show', post);
+                        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(postUrl)}`;
+                        return(
+                            <tr key={post.id} className="border-b border-gray-200 hover:bg-gray-50">
+                                <td className="p-4 flex items-center">
+                                    <img
+                                        src={post.image_url}
+                                        alt={post.name}
+                                        className="w-10 h-10 rounded-md object-cover mr-4"
+                                    />
+                                    <div>
+                                        <p className="font-bold text-smd-dark">{post.name}</p>
+                                        <p className="text-xs text-gray-500">Por: {post.user.name}</p>
+                                    </div>
+                                </td>
+                                <td className="p-4 text-gray-700">
                                     <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
                                         {post.category.name}
                                     </span>
-                            </td>
-                            <td className="p-4">
-                                {post.status == 2 ? (
-                                    <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                </td>
+                                <td className="p-4">
+                                    {post.status == 2 ? (
+                                        <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
                                             Publicado
                                         </span>
-                                ) : (
-                                    <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                    ) : (
+                                        <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
                                             Borrador
                                         </span>
-                                )}
-                            </td>
-                            <td className="p-4">
-                                <div className="flex gap-2">
-                                    <Link
-                                        target="_blank"
-                                        href={route('posts.show', post)}
-                                        className="text-blue-600 hover:text-blue-900"
-                                        title="Editar"
-                                    >
-                                        <EyeIcon className="h-5 w-5" />
-                                    </Link>
-                                    <Link
-                                        href={route('admin.posts.edit', post)}
-                                        className="text-orange-400 hover:text-orange-900"
-                                        title="Editar"
-                                    >
-                                        <PencilSquareIcon className="h-5 w-5" />
-                                    </Link>
-                                    <button
-                                        onClick={() => confirmDeletion(post)}
-                                        className="text-red-600 hover:text-red-900"
-                                        title="Eliminar"
-                                    >
-                                        <TrashIcon className="h-5 w-5" />
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
+                                    )}
+                                </td>
+                                <td className="p-4">
+                                    <div className="flex gap-2">
+                                        <button
+                                            onClick={() => handleQrDownload(post)}
+                                            className="text-gray-500 hover:text-purple-600"
+                                            title="Descargar Código QR"
+                                        >
+                                            <QrCodeIcon className="h-5 w-5" />
+                                        </button>
+                                        <button
+                                            onClick={() => handleCopyClick(post)}
+                                            className="text-gray-500 hover:text-smd-soft-green relative"
+                                            title="Copiar URL"
+                                        >
+                                            {copiedPostId === post.id ? (
+                                                <CheckIcon className="h-5 w-5 text-smd-soft-green" />
+                                            ) : (
+                                                <ClipboardDocumentIcon className="h-5 w-5" />
+                                            )}
+                                        </button>
+                                        <Link
+                                            target="_blank"
+                                            href={route('posts.show', post)}
+                                            className="text-blue-600 hover:text-blue-900"
+                                            title="Editar"
+                                        >
+                                            <EyeIcon className="h-5 w-5" />
+                                        </Link>
+                                        <Link
+                                            href={route('admin.posts.edit', post)}
+                                            className="text-orange-400 hover:text-orange-900"
+                                            title="Editar"
+                                        >
+                                            <PencilSquareIcon className="h-5 w-5" />
+                                        </Link>
+                                        <button
+                                            onClick={() => confirmDeletion(post)}
+                                            className="text-red-600 hover:text-red-900"
+                                            title="Eliminar"
+                                        >
+                                            <TrashIcon className="h-5 w-5" />
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        )
+                    })}
                     </tbody>
                 </table>
                 <div className="md:hidden divide-y divide-gray-200">
-                    {data.map((post) => (
+                    {data.map((post) => {
+                        const postUrl = route('posts.show', post);
+                        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(postUrl)}`;
+                        return(
                         <div key={post.id} className="p-4">
                             <div className="flex items-center mb-4">
                                 <img
@@ -149,7 +214,33 @@ export default function Index({ posts }) {
                                 </div>
                                 <div className="flex justify-between items-center pt-2 border-t mt-2">
                                     <span className="text-sm font-semibold text-gray-600">Acciones:</span>
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-4 items-center">
+                                        <button
+                                            onClick={() => handleQrDownload(post)}
+                                            className="text-gray-500 hover:text-purple-600"
+                                            title="Descargar Código QR"
+                                        >
+                                            <QrCodeIcon className="h-6 w-6" />
+                                        </button>
+                                        <button
+                                            onClick={() => handleCopyClick(post)}
+                                            className="text-gray-500 hover:text-smd-soft-green relative"
+                                            title="Copiar URL"
+                                        >
+                                            {copiedPostId === post.id ? (
+                                                <CheckIcon className="h-5 w-5 text-smd-soft-green" />
+                                            ) : (
+                                                <ClipboardDocumentIcon className="h-6 w-6" />
+                                            )}
+                                        </button>
+                                        <Link
+                                            target="_blank"
+                                            href={route('posts.show', post)}
+                                            className="text-blue-600 hover:text-blue-900"
+                                            title="Editar"
+                                        >
+                                            <EyeIcon className="h-6 w-6" />
+                                        </Link>
                                         <Link
                                             href={route('admin.posts.edit', post.id)} // Corregido: pasar post.id
                                             className="text-blue-600 hover:text-blue-900"
@@ -166,7 +257,8 @@ export default function Index({ posts }) {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
 

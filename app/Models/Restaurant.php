@@ -13,8 +13,10 @@ class Restaurant extends Model
     protected $fillable = [
         'name',
         'address',
+        'slug',
         'description',
         'food_category_id',
+        'url',
     ];
 
     public function getRouteKeyName()

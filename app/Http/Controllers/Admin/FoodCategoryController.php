@@ -3,47 +3,91 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\FoodCategoryResource;
 use App\Models\FoodCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Inertia\Inertia;
 
 class FoodCategoryController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        return FoodCategory::all();
+        return Inertia::render('Admin/FoodCategories/Index', [
+            'foodCategories' => FoodCategoryResource::collection(FoodCategory::latest()->paginate(10)),
+        ]);
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return Inertia::render('Admin/FoodCategories/Create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'name' => ['required'],
-            'description' => ['required'],
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:food_categories,name',
+            'description' => 'required|string',
         ]);
 
-        return FoodCategory::create($data);
+        FoodCategory::create([
+            'name' => $validated['name'],
+            'slug' => Str::slug($validated['name']),
+            'description' => $validated['description'],
+        ]);
+
+        return redirect()->route('admin.food-categories.index')->with('success', 'Categoría creada.');
     }
 
-    public function show(FoodCategory $foodCategory)
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(FoodCategory $foodCategory)
     {
-        return $foodCategory;
+        return Inertia::render('Admin/FoodCategories/Edit', [
+            'food_category' => new FoodCategoryResource($foodCategory),
+        ]);
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, FoodCategory $foodCategory)
     {
-        $data = $request->validate([
-            'name' => ['required'],
-            'description' => ['required'],
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:food_categories,name,' . $foodCategory->id,
+            'description' => 'required|string',
+        ]);
+//        dd($foodCategory);
+
+        $foodCategory->update([
+            'name' => $validated['name'],
+            'slug' => Str::slug($validated['name']),
+            'description' => $validated['description'],
         ]);
 
-        $foodCategory->update($data);
-
-        return $foodCategory;
+        return redirect()->route('admin.food-categories.index')->with('success', 'Categoría actualizada.');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(FoodCategory $foodCategory)
     {
+        if ($foodCategory->restaurant()->count() > 0) {
+            return redirect()->back()->with('error', 'No se puede eliminar una categoría con restaurantes asociados.');
+        }
         $foodCategory->delete();
-
-        return response()->json();
+        return redirect()->route('admin.food-categories.index')->with('success', 'Categoría eliminada.');
     }
 }

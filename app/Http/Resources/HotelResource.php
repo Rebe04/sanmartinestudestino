@@ -27,13 +27,9 @@ class HotelResource extends JsonResource
             'phone' => $this->phone,
             'email' => $this->email,
             'web' => $this->web,
-
-            // Usamos la relación 'image' (una sola) para la URL de la imagen principal
             'image_url' => $this->whenLoaded('image', function () {
                 return $this->image ? asset($this->image->url) : 'https://placehold.co/600x400/2E6230/FFFFFF?text=Hotel';
             }),
-
-            // Incluimos las relaciones completas solo cuando se cargan explícitamente
             'images' => ImageResource::collection($this->whenLoaded('images')),
             'amenities' => AmenityResource::collection($this->whenLoaded('amenities')), // Necesitarás crear AmenityResource
         ];

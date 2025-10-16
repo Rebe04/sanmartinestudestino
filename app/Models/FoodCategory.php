@@ -11,7 +11,7 @@ class FoodCategory extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name', 'description'
+        'name', 'description', 'slug'
     ];
 
     //    Relación Polimorfica
@@ -20,7 +20,7 @@ class FoodCategory extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
-    
+
     public function getRouteKeyName()
     {
         return "slug";

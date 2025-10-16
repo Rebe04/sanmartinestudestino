@@ -168,7 +168,7 @@ export default function Create({ amenities }) {
                 </div>
 
                 {/* --- BOTONES DE ACCIÓN --- */}
-                <div className="flex justify-end gap-4 py-6">
+                <div className="mt-6 flex justify-end items-center gap-smd-16">
                     <Link href={route('admin.hotels.index')} className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150">Cancelar</Link>
                     <PrimaryButton className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400" disabled={processing}>Crear Hotel</PrimaryButton>
                 </div>
