@@ -32,6 +32,12 @@ class Hotel extends Model
     }
 
 //    Relación Polimorfica
+
+    public function routes()
+    {
+        return $this->morphToMany(Route::class, 'routable');
+    }
+
     public function reviews()
     {
         return $this->morphMany(Review::class, 'reviewable');
@@ -53,7 +59,4 @@ class Hotel extends Model
         return $this->belongsToMany(Amenity::class, 'hotel_amenity');
     }
 
-    public function routes (){
-        return $this->belongsToMany(Route::class);
-    }
 }

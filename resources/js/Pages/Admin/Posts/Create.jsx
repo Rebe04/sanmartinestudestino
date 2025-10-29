@@ -187,7 +187,7 @@ export default function Create({ postCategories }){
                     </div>
 
                     <div className="mt-6 flex justify-end items-center gap-smd-16">
-                        <Link href={route('admin.posts.index')} className="text-gray-600 hover:underline mr-4">Cancelar</Link>
+                        <Link href={route('admin.posts.index')} className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50">Cancelar</Link>
                         <button type="submit" disabled={processing} className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400">
                             Crear Post
                         </button>

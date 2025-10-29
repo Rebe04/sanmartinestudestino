@@ -42,7 +42,7 @@ export default function Edit({ food_category }) {
                         {errors.description && <p className="text-sm text-red-600">{errors.description}</p>}
                     </div>
                     <div className="mt-6 flex justify-end items-center gap-smd-16">
-                        <Link href={route('admin.food-categories.index')} className="text-gray-600 hover:underline mr-4">Cancelar</Link>
+                        <Link href={route('admin.food-categories.index')} className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50">Cancelar</Link>
                         <PrimaryButton className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400" disabled={processing}>Actualizar</PrimaryButton>
                     </div>
                 </form>

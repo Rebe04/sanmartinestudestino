@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\Admin\AmenityController;
 use App\Http\Controllers\Admin\FoodCategoryController;
 use App\Http\Controllers\Admin\RestaurantController;
+use App\Http\Controllers\Admin\RouteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,5 @@ use App\Http\Controllers\Admin\RestaurantController;
     Route::resource('/hotels', HotelController::class)->except(['show']);
     Route::resource('/amenities', AmenityController::class)->except(['show']);
     Route::resource('/food-categories', FoodCategoryController::class)->except(['show']);
-    Route::resource('restaurants', RestaurantController::class)->except(['show']);
+    Route::resource('/restaurants', RestaurantController::class)->except(['show']);
+    Route::resource('/routes', RouteController::class)->except(['show']);

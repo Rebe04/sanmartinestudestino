@@ -25,6 +25,12 @@ class Restaurant extends Model
     }
 
 //    Relación polimorfica
+
+    public function routes()
+    {
+        return $this->morphToMany(Route::class, 'routable');
+    }
+
     public function reviews()
     {
         return $this->morphMany(Review::class, 'reviewable');
@@ -50,8 +56,4 @@ class Restaurant extends Model
         return $this->hasMany(Dish::class);
     }
 
-    //Relación muchos a muchos
-    public  function routes(){
-        return $this->belongsToMany(Route::class, 'route_restaurant');
-    }
 }

@@ -20,6 +20,11 @@ class Event extends Model
 
     //    Relación Polimorfica
 
+    public function routes()
+    {
+        return $this->morphToMany(Route::class, 'routable');
+    }
+
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
@@ -38,10 +43,6 @@ class Event extends Model
         return "slug";
     }
 
-//    Relación muchos a muchos
-    public function routes(){
-        return $this->belongsToMany(Route::class, 'route_event');
-    }
 
 //    Relación uno amuchos inversa
     public function eventCategory() {

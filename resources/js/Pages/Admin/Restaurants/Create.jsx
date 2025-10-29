@@ -193,7 +193,7 @@ export default function Create({ foodCategories }) {
                         </div>
                     </div>
                     <div className="mt-6 flex justify-end items-center gap-smd-16">
-                        <SecondaryButton onClick={closeEditModal}>Cancelar</SecondaryButton>
+                        <SecondaryButton className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50" onClick={closeEditModal}>Cancelar</SecondaryButton>
                         <PrimaryButton onClick={handleUpdateDish} className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400">Guardar Cambios</PrimaryButton>
                     </div>
                 </div>

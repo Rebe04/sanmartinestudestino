@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
-import { HomeIcon, NewspaperIcon, BuildingOffice2Icon, BuildingStorefrontIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, NewspaperIcon, BuildingOffice2Icon, BuildingStorefrontIcon, ChevronDownIcon, FlagIcon } from '@heroicons/react/24/outline';
 import ApplicationLogo from "@/Components/ApplicationLogo.jsx";
 
 // Recibe dos props: si está abierto y la función para cambiar su estado
@@ -40,7 +40,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                 { name: 'Categorías', href: route('admin.food-categories.index'), active: isActive('/admin/food-categories') }, // Reemplaza '#' con la ruta real
             ]
         },
-        // Aquí se pueden añadir Lugares y Eventos con la misma estructura de 'children'
+        {
+            name: 'Rutas',
+            icon: FlagIcon,
+            active: isActive('/admin/routes'),
+            href: route('admin.routes.index'),
+        },
     ];
 
     const handleDropdownClick = (name) => {

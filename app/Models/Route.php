@@ -12,6 +12,7 @@ class Route extends Model
 
     protected $fillable = [
         'name',
+        'slug',
         'time',
         'description',
     ];
@@ -23,30 +24,26 @@ class Route extends Model
 
     //    Relación Polimorfica
 
-    public function image()
-    {
-        return $this->morphOne(Image::class, 'imageable');
-    }
-
-//    Relación muchos a muchos
-
     public function places()
     {
-        return $this->belongsToMany(Place::class, 'route_place');
+        return $this->morphedByMany(Place::class, 'routable')->withPivot('order', 'description')->withTimestamps();
     }
-
     public function restaurants()
     {
-        return $this->belongsToMany(Restaurant::class, 'route_restaurant');
+        return $this->morphedByMany(Restaurant::class, 'routable')->withPivot('order', 'description')->withTimestamps();
     }
 
     public function hotels()
     {
-        return $this->belongsToMany(Hotel::class, 'route_hotel');
+        return $this->morphedByMany(Hotel::class, 'routable')->withPivot('order', 'description')->withTimestamps();
     }
-
     public function events()
     {
-        return $this->belongsToMany(Event::class, 'route_event');
+        return $this->morphedByMany(Event::class, 'routable')->withPivot('order', 'description')->withTimestamps();
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

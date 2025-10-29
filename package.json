@@ -27,6 +27,7 @@
         "@heroicons/react": "^2.2.0",
         "@studio-freight/lenis": "^1.0.42",
         "he": "^1.2.0",
+        "react-beautiful-dnd": "^13.1.1",
         "react-quill": "^2.0.0",
         "react-select": "^5.10.2",
         "swiper": "^11.2.10"

@@ -24,6 +24,11 @@ class Place extends Model
 
     //    Relación Polimorfica
 
+    public function routes()
+    {
+        return $this->morphToMany(Route::class, 'routable');
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
@@ -38,10 +43,6 @@ class Place extends Model
         return "slug";
     }
 
-    public function routes()
-    {
-        return $this->belongsToMany(Route::class, 'route_place');
-    }
 
     //    Relación uno amuchos inversa
     public function placeCategory() {
