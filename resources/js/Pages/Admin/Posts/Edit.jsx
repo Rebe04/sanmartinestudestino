@@ -5,14 +5,13 @@ import ReactQuill from 'react-quill';
 import CreatableSelect from '@/Components/Utils/CreatableSelect';
 import 'react-quill/dist/quill.snow.css';
 import he from "he";
+import DragImage from "@/Components/Admin/DragImage.jsx";
 
 export default function Edit({ post, postCategories }) {
     const postData = post.data;
 
     // --- LÓGICA DE LA IMAGEN ---
-    const [dragActive, setDragActive] = useState(false);
     const [imagePreview, setImagePreview] = useState(postData.image_url);
-    const inputRef = React.useRef(null);
 
     const modules = {
         toolbar: [
@@ -152,27 +151,7 @@ export default function Edit({ post, postCategories }) {
                                     error={errors.post_category_id || errors.new_category_name}
                                 />
                             </div>
-                            <div>
-                                <label>Imagen Destacada (WEBP, &lt;1MB)</label>
-                                <div
-                                    className={`mt-1 h-64 border-2 border-dashed rounded-md flex flex-col justify-center items-center text-center ${dragActive ? "border-smd-soft-green bg-green-50" : "border-gray-300"}`}
-                                    onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}
-                                >
-                                    {imagePreview ? (
-                                        <img src={imagePreview} alt="Vista previa" className="h-full w-full object-contain p-2"/>
-                                    ) : (
-                                        <div>
-                                            <p className="text-gray-500">Arrastra y suelta tu imagen aquí</p>
-                                            <p className="text-sm text-gray-400 my-2">o</p>
-                                            <button type="button" onClick={onButtonClick} className="px-4 py-2 bg-gray-200 rounded-md text-sm font-semibold hover:bg-gray-300">
-                                                Seleccionar Archivo
-                                            </button>
-                                            <p className="text-xs text-gray-400 mt-2">WEBP de menos de 1MB</p>
-                                        </div>
-                                    )}
-                                </div>
-                                {errors.image && <p className="text-sm text-red-600">{errors.image}</p>}
-                            </div>
+                            <DragImage imagePreviewData={imagePreview} errors={errors} setData={setData} />
                             <div>
                                 <label>Estado</label>
                                 <select value={data.status} onChange={e => setData('status', e.target.value)} className="mt-1 block w-full rounded-md">

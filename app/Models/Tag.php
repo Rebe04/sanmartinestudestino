@@ -16,6 +16,11 @@ class Tag extends Model
         'color',
     ];
 
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     public function subevents()
     {
         return $this->belongsToMany(Subevent::class, 'subevent_tag');

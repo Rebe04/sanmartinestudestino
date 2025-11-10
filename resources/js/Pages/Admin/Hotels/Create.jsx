@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import AdminLayout from '@/Layouts/Admin/AdminLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import Select from 'react-select'; // Asegúrate de haber hecho 'npm install react-select'
+import Select from 'react-select';
 import InputLabel from "@/Components/InputLabel.jsx";
 import TextInput from "@/Components/TextInput.jsx";
 import InputError from "@/Components/InputError.jsx";

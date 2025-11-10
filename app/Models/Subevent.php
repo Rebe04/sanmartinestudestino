@@ -16,6 +16,7 @@ class Subevent extends Model
         'date',
         'duration',
         'event_id',
+        'id',
     ];
 
     //    Relación Polimorfica

@@ -13,6 +13,7 @@ class EventCategory extends Model
     protected $fillable = [
         'name',
         'description',
+        'slug',
     ];
 
     //    Relación Polimorfica

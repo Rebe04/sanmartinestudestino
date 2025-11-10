@@ -20,6 +20,8 @@ class Place extends Model
         'youtube',
         'phone',
         'email',
+        'place_category_id',
+        'slug',
     ];
 
     //    Relación Polimorfica

@@ -16,6 +16,9 @@ class Event extends Model
         'starts_at',
         'finishes_at',
         'event_category_id',
+        'slug',
+        'date',
+        'duration',
     ];
 
     //    Relación Polimorfica

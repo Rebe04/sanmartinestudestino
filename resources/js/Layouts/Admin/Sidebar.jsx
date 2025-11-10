@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
-import { HomeIcon, NewspaperIcon, BuildingOffice2Icon, BuildingStorefrontIcon, ChevronDownIcon, FlagIcon } from '@heroicons/react/24/outline';
+import {
+    HomeIcon,
+    NewspaperIcon,
+    BuildingOffice2Icon,
+    BuildingStorefrontIcon,
+    ChevronDownIcon,
+    FlagIcon,
+    MapIcon, CalendarDaysIcon
+} from '@heroicons/react/24/outline';
 import ApplicationLogo from "@/Components/ApplicationLogo.jsx";
 
-// Recibe dos props: si está abierto y la función para cambiar su estado
 export default function Sidebar({ isOpen, setIsOpen }) {
     const { url } = usePage();
 
-    // Función para determinar si un link está activo
     const isActive = (path) => url.startsWith(path);
     const [openDropdown, setOpenDropdown] = useState('');
 
@@ -37,7 +43,16 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             active: isActive('/admin/restaurants') || isActive('/admin/food-categories'),
             children: [
                 { name: 'Todos los Restaurantes', href: route('admin.restaurants.index'), active: isActive('/admin/restaurants') },
-                { name: 'Categorías', href: route('admin.food-categories.index'), active: isActive('/admin/food-categories') }, // Reemplaza '#' con la ruta real
+                { name: 'Categorías', href: route('admin.food-categories.index'), active: isActive('/admin/food-categories') },
+            ]
+        },
+        {
+            name: 'Lugares',
+            icon: MapIcon,
+            active: isActive('/admin/places') || isActive('/admin/place-categories'),
+            children: [
+                { name: 'Todos los Lugares', href: route('admin.places.index'), active: isActive('/admin/places') },
+                { name: 'Categorías de Lugar', href: route('admin.place-categories.index'), active: isActive('/admin/place-categories') },
             ]
         },
         {
@@ -45,6 +60,16 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             icon: FlagIcon,
             active: isActive('/admin/routes'),
             href: route('admin.routes.index'),
+        },
+        {
+            name: 'Eventos',
+            icon: CalendarDaysIcon,
+            active: isActive('/admin/events') || isActive('/admin/event-categories') || isActive('/admin/tags'),
+            children: [
+                { name: 'Todos los Eventos', href: route('admin.events.index'), active: isActive('/admin/events') },
+                { name: 'Categorías de Evento', href: route('admin.event-categories.index'), active: isActive('/admin/event-categories') },
+                { name: 'Tags de Subevento', href: route('admin.tags.index'), active: isActive('/admin/tags') },
+            ]
         },
     ];
 
