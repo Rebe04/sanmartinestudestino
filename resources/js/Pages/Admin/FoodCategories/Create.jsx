@@ -9,6 +9,7 @@ import InputError from "@/Components/InputError.jsx";
 export default function Create() {
     const { data, setData, post, processing, errors } = useForm({
         name: '',
+        description: '',
     });
 
     const submit = (e) => {
@@ -34,7 +35,11 @@ export default function Create() {
                         />
                         <InputError message={errors.name} className="mt-2" />
                     </div>
-
+                    <div>
+                        <label>Descripción</label>
+                        <textarea value={data.description} onChange={e => setData('description', e.target.value)} rows="3" className="mt-1 block w-full rounded-md"></textarea>
+                        {errors.description && <p className="text-sm text-red-600">{errors.description}</p>}
+                    </div>
                     <div className="mt-6 flex justify-end items-center gap-smd-16">
                         <Link href={route('admin.post-categories.index')} className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50">Cancelar</Link>
                         <PrimaryButton className="px-6 py-2 bg-smd-soft-green text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400" disabled={processing}>Guardar</PrimaryButton>

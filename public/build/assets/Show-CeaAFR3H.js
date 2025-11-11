@@ -1,1 +1,0 @@
-import{j as i}from"./app-H54LIpON.js";import{M as t}from"./MainLayout-CAyar3oq.js";import"./logoWhite-C0-n3M0p.js";import"./NavLink-w6Lb9-Lu.js";function a({event_category:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{a as default};
