@@ -6,6 +6,8 @@ use App\Models\Post;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\RestaurantResource;
+use App\Models\Restaurant;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -17,7 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // --- Lógica para obtener los posts ---
+
         $posts = Post::with(['postCategory', 'user', 'image'])
             ->latest()
             ->take(3)
@@ -40,12 +42,19 @@ class HomeController extends Controller
                 ];
             });
 
+        $restaurants = Restaurant::with(['image', 'foodCategory'])
+        ->withAvg('reviews', 'rating')
+        ->inRandomOrder()
+        ->take(6)
+            ->get();
+
         return Inertia::render('Welcome', [
             'posts' => $posts,
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
+            'restaurants' => RestaurantResource::collection($restaurants),
         ]);
     }
 }

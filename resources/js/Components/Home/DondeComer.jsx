@@ -8,7 +8,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {useState} from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/24/outline";
 import GastronomiaCard from "@/Components/Home/GastronomiaCard.jsx";
-export default function () {
+export default function ({restaurants}) {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -121,7 +121,7 @@ export default function () {
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
                     className="!py-smd-24 !hidden sm:!block" // Añade un poco de padding inferior por si las sombras se cortan
                 >
-                    {gastronomiaSanmartinera.map((item, index) => (
+                    {restaurants.map((item, index) => (
                         <SwiperSlide key={index} className="h-auto">
                             <GastronomiaCard item={item} />
                         </SwiperSlide>
@@ -141,7 +141,7 @@ export default function () {
 
                     className="!py-smd-24 !px-smd-40 !block sm:!hidden"
                 >
-                    {gastronomiaSanmartinera.map((item, index) => (
+                    {restaurants.map((item, index) => (
                         <SwiperSlide key={index} className="h-auto">
                             <GastronomiaCard item={item} />
                         </SwiperSlide>

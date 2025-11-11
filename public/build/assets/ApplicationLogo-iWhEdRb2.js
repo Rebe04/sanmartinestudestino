@@ -1,1 +1,0 @@
-import{j as o}from"./app-wSiub65X.js";import{l as a,a as t}from"./logoWhite-C0-n3M0p.js";function r({white:s=!1}){return o.jsx(o.Fragment,{children:s?o.jsx("img",{className:"w-smd-96",src:a,alt:"Logo San Martin Es Tu Destino Blanco"}):o.jsx("img",{className:"w-smd-96",src:t,alt:"Logo San Martin Es Tu Destino Blanco"})})}export{r as A};

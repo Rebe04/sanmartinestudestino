@@ -26,6 +26,7 @@ class RestaurantResource extends JsonResource
             'images' => ImageResource::collection($this->whenLoaded('images')),
             'food_category' => new FoodCategoryResource($this->whenLoaded('foodCategory')),
             'dishes' => DishResource::collection($this->whenLoaded('dishes')),
+            'rate' => (float) $this->reviews_avg_rating ?? 0,
         ];
     }
 }
