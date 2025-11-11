@@ -8,6 +8,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {useState} from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/24/outline";
 import GastronomiaCard from "@/Components/Home/GastronomiaCard.jsx";
+import {Link} from "@inertiajs/react";
 export default function ({restaurants}) {
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -148,10 +149,10 @@ export default function ({restaurants}) {
                     ))}
                 </Swiper>
             <div className="w-full flex justify-center md:justify-end mb-smd-32 mt-smd-24">
-                <a href="#" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
+                <Link href={route('restaurants.index')} className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
                     Más de nuestra gastronomía
                     <ChevronRightIcon className="w-5 h-5 animate-bounce-horizontal"/>
-                </a>
+                </Link>
             </div>
             </div>
 
