@@ -155,7 +155,6 @@ export default function ({restaurants}) {
                 </Link>
             </div>
             </div>
-
         </section>
     )
 }
