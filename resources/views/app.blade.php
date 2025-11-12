@@ -25,7 +25,7 @@
             <meta property="og:title" content="San Martin es Tu Destino">
             <meta property="og:description" content="Descubre la magia, cultura y belleza de San Martín de los Llanos, Meta. Tu próxima aventura te espera.">
             {{-- Asegúrate de tener esta imagen en tu carpeta /public --}}
-            <meta property="og:image" content="{{ asset('default-social-image.jpg') }}">
+            <meta property="og:image" content="{{ asset('default-social-image.png') }}">
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
             <meta property="og:url" content="{{ url()->current() }}">
