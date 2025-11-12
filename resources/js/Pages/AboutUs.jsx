@@ -37,7 +37,7 @@ export default function AboutUs() {
 
     // Imagen para redes sociales (debería ser una URL absoluta)
     // Es buena práctica tener una imagen dedicada en tu carpeta /public
-    const socialImageUrl = new URL('/social-image.png', baseUrl).href;
+    const socialImageUrl = new URL('/default-social-image.png', baseUrl).href;
 
     const metaDescription = "Descubre por qué 'San Martín es tu Destino'. Conoce la historia, la cultura, la gastronomía y el folclor de San Martín de los Llanos, cuna de las Cuadrillas y referente del Meta.";
     const metaKeywords = "San Martín de los Llanos, Turismo Meta, Cuadrillas de San Martín, Folclor Llanero, Gastronomía Llanera, San Martín es tu Destino, Acerca de"
@@ -60,6 +60,8 @@ export default function AboutUs() {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content={socialImageUrl} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
                 <meta property="og:site_name" content="San Martín es tu Destino" />
 
                 {/* Twitter Card (para Twitter) */}
