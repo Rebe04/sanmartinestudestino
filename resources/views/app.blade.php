@@ -13,6 +13,8 @@
             <meta property="og:title" content="{{ $page['props']['seo']['title'] }}">
             <meta property="og:description" content="{{ $page['props']['seo']['description'] }}">
             <meta property="og:image" content="{{ $page['props']['seo']['image'] }}">
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
             <meta property="og:url" content="{{ url()->current() }}">
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="{{ $page['props']['seo']['title'] }}" />
@@ -24,6 +26,8 @@
             <meta property="og:description" content="Descubre la magia, cultura y belleza de San Martín de los Llanos, Meta. Tu próxima aventura te espera.">
             {{-- Asegúrate de tener esta imagen en tu carpeta /public --}}
             <meta property="og:image" content="{{ asset('default-social-image.jpg') }}">
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
             <meta property="og:url" content="{{ url()->current() }}">
         @endif
         <meta property="og:type" content="website" />
