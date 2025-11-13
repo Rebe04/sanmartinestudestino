@@ -54,6 +54,6 @@ class Event extends Model
 
     //Relación uno a muchos
     public function subevent(){
-        return $this->hasMany(SubEvent::class);
+        return $this->hasMany(Subevent::class);
     }
 }
