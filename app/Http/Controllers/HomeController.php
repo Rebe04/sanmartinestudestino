@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Hotel;
 use App\Models\Post;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\RestaurantResource;
+use App\Http\Resources\HomeEventResource;
+use App\Http\Resources\HomeHotelResource;
 use App\Models\Restaurant;
 use Inertia\Inertia;
 
@@ -48,6 +52,20 @@ class HomeController extends Controller
         ->take(6)
             ->get();
 
+        $nextEvent = Event::with([
+            'image',
+            'subevent.image',
+            'subevent.tags'
+        ])
+            ->where('starts_at', '>=', now()->toDateString())
+            ->orderBy('starts_at', 'asc')
+            ->first();
+
+        $hotels = Hotel::with('image')
+        ->inRandomOrder()
+        ->take(3)
+            ->get();
+
         return Inertia::render('Welcome', [
             'posts' => $posts,
             'canLogin' => Route::has('login'),
@@ -55,6 +73,8 @@ class HomeController extends Controller
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
             'restaurants' => RestaurantResource::collection($restaurants),
+            'nextEvent' => $nextEvent ? new HomeEventResource($nextEvent) : null,
+            'hotels' => HomeHotelResource::collection($hotels),
         ]);
     }
 }

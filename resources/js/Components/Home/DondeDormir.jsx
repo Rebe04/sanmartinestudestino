@@ -5,28 +5,8 @@ import hotel1 from "../../assets/images/hotels/hotel_1.jpg"
 import hotel2 from "../../assets/images/hotels/hotel_2.jpg"
 import hotel3 from "../../assets/images/hotels/hotel_3.jpg"
 
-export default function DondeDormir(){
+export default function DondeDormir({hotels}){
 
-    const hotelesSanmartin = [
-        {
-            imagen: hotel1,
-            nombre: "Hotel River Side",
-            direccion: "Carrera 7 # 10-05, San Martín",
-            precioPorNoche: 180
-        },
-        {
-            imagen: hotel2,
-            nombre: "Posada Turística La Herradura",
-            direccion: "Calle 10 # 8-15, Barrio Centro",
-            precioPorNoche: 95
-        },
-        {
-            imagen: hotel3,
-            nombre: "Hotel Palma Real San Martín",
-            direccion: "Carrera 7 # 12-34, Frente al Parque Principal",
-            precioPorNoche: 120
-        },
-    ];
 
     return (
         <>
@@ -41,7 +21,7 @@ export default function DondeDormir(){
                     </h2>
                 </div>
                 <div className="py-smd-24 grid md:grid-cols-2 lg:grid-cols-3 gap-smd-24 px-smd-24 md:px-smd-88">
-                    {hotelesSanmartin.map((hotel, index) => (
+                    {hotels.map((hotel, index) => (
                         <div key={index} className="rounded-2xl h-smd-488 overflow-hidden flex flex-col justify-between bg-gray-200/50 group">
                             <img className="object-cover w-full h-smd-224" src={hotel.imagen} alt={hotel.nombre}/>
                             <div className="px-smd-24 my-smd-16 flex flex-col flex-1  justify-between h-auto">
@@ -71,7 +51,7 @@ export default function DondeDormir(){
                     ))}
                 </div>
                 <div className="flex justify-center w-full mt-smd-64 mb-smd-48">
-                    <a href="#" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
+                    <a href={route('hotels.index')} className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
                         Más de nuestros hoteles
                         <ChevronRightIcon className="w-5 h-5 animate-bounce-horizontal" />
                     </a>

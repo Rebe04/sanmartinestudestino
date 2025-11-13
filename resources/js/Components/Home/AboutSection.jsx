@@ -45,7 +45,7 @@ const VideoPopup = ({ videoId, onClose }) => (
 // --- Componente Principal "AboutSection" ---
 export default function AboutSection() {
     const [videoOpen, setVideoOpen] = useState(false);
-    const videoId = 'iy5jU9NnDSs';
+    const videoId = 'vV16MkQ-2jk';
 
     return (
         <>
@@ -103,7 +103,7 @@ export default function AboutSection() {
                                 />
                             </div>
 
-                            <a href="#" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
+                            <a href="/nuestra-historia" className="inline-flex items-center gap-2 bg-smd-soft-green text-white font-bold px-8 py-4 rounded-full hover:bg-smd-yellow hover:text-white transition-colors duration-300">
                                 Conoce más de nuestra historia
                                 <ChevronRightIcon className="w-5 h-5 animate-bounce-horizontal"/>
                             </a>

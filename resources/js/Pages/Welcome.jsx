@@ -9,7 +9,7 @@ import NextEvent from "@/Components/Home/NextEvent.jsx";
 import PostsSection from "@/Components/Home/PostsSection.jsx";
 import React from "react";
 
-export default function Welcome({ auth, laravelVersion, phpVersion, posts, restaurants }) {
+export default function Welcome({ auth, laravelVersion, phpVersion, posts, restaurants, nextEvent, hotels }) {
     return (
         <div>
             <Banner/>
@@ -17,8 +17,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion, posts, resta
             <PostsSection posts={posts} />
             <RoutesSection/>
             <DondeComer restaurants={restaurants.data} />
-            <DondeDormir/>
-            <NextEvent/>
+            <DondeDormir hotels={hotels.data}/>
+            <NextEvent eventData={nextEvent.data}/>
         </div>
     );
 }

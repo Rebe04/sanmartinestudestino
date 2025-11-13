@@ -23,11 +23,11 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                             </DropdownSm>
                             <DropdownSm title="Cultura y Eventos">
                                 <DropdownSm.Link href={route('about-us')}>Nuestra Historia</DropdownSm.Link>
-                                <DropdownSm.Link href={route('cuadrillas')}>Las Cuadrillas</DropdownSm.Link>
-                                <DropdownSm.Link href={route('monuments')}>Monumentos</DropdownSm.Link>
+                                {/*<DropdownSm.Link href={route('cuadrillas')}>Las Cuadrillas</DropdownSm.Link>*/}
+                                {/*<DropdownSm.Link href={route('monuments')}>Monumentos</DropdownSm.Link>*/}
                             </DropdownSm>
                             <NavLink href={route('posts.index')}>Blog</NavLink>
-                            <NavLink href={route('contact-us')}>Contacto</NavLink>
+                            {/*<NavLink href={route('contact-us')}>Contacto</NavLink>*/}
                         </nav>
 
                         <div className="flex items-center gap-4">
@@ -35,11 +35,11 @@ export default function Navbar({scrolled, setSearchOpen, setSideMenuOpen, setMob
                                 <button onClick={() => setSearchOpen(true)} className="p-3 rounded-full hover:bg-gray-100">
                                     <MagnifyingGlassIcon className="w-6 h-6 text-gray-700"/>
                                 </button>
-                                <button onClick={() => setSideMenuOpen(true)} className="p-3 rounded-full hover:bg-gray-100">
-                                    <svg className="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18" fill="none">
-                                        <path d="M19.5 1.28571C19.5 0.575658 18.9179 0 18.2 0H1.3C0.582056 0 0 0.575658 0 1.28571C0 1.99577 0.582056 2.57143 1.3 2.57143H18.2C18.9179 2.57143 19.5 1.99572 19.5 1.28571ZM1.3 7.71428H24.7C25.4179 7.71428 26 8.28999 26 9C26 9.71006 25.4179 10.2857 24.7 10.2857H1.3C0.582056 10.2857 0 9.71006 0 9C0 8.28999 0.582056 7.71428 1.3 7.71428ZM1.3 15.4286H13C13.7179 15.4286 14.3 16.0042 14.3 16.7143C14.3 17.4243 13.7179 18 13 18H1.3C0.582056 18 0 17.4243 0 16.7143C0 16.0042 0.582056 15.4286 1.3 15.4286Z" fill="currentColor" />
-                                    </svg>
-                                </button>
+                                {/*<button onClick={() => setSideMenuOpen(true)} className="p-3 rounded-full hover:bg-gray-100">*/}
+                                {/*    <svg className="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18" fill="none">*/}
+                                {/*        <path d="M19.5 1.28571C19.5 0.575658 18.9179 0 18.2 0H1.3C0.582056 0 0 0.575658 0 1.28571C0 1.99577 0.582056 2.57143 1.3 2.57143H18.2C18.9179 2.57143 19.5 1.99572 19.5 1.28571ZM1.3 7.71428H24.7C25.4179 7.71428 26 8.28999 26 9C26 9.71006 25.4179 10.2857 24.7 10.2857H1.3C0.582056 10.2857 0 9.71006 0 9C0 8.28999 0.582056 7.71428 1.3 7.71428ZM1.3 15.4286H13C13.7179 15.4286 14.3 16.0042 14.3 16.7143C14.3 17.4243 13.7179 18 13 18H1.3C0.582056 18 0 17.4243 0 16.7143C0 16.0042 0.582056 15.4286 1.3 15.4286Z" fill="currentColor" />*/}
+                                {/*    </svg>*/}
+                                {/*</button>*/}
                             </div>
                             <Link href={route('places.index')} className="hidden xl:block bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors">
                                 Explora San Martín

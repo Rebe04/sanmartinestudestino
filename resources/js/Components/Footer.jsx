@@ -79,13 +79,13 @@ export default function Footer() {
                         <ContactInfoItem
                             icon={<PhoneIcon className="w-8 h-8"/>}
                             title="Teléfono"
-                            lines={['(+57) 300 123 4567']}
+                            lines={['(+57) 3142952746']}
                         />
                         <div className="vr-line h-20 w-px bg-white/20 hidden lg:block"></div>
                         <ContactInfoItem
                             icon={<EnvelopeIcon className="w-8 h-8"/>}
                             title="Escríbenos"
-                            lines={['info@sanmartindestino.com']}
+                            lines={['contactenos@sanmartin-meta.gov.co']}
                         />
                     </div>
                 </div>
@@ -120,10 +120,8 @@ export default function Footer() {
                             </h5>
                             <ul className="space-y-3">
                                 <FooterLink href="/">Inicio</FooterLink>
-                                <FooterLink href="#">Nuestra Historia</FooterLink>
-                                <FooterLink href="#">Las Cuadrillas</FooterLink>
-                                <FooterLink href="#">Eventos</FooterLink>
-                                <FooterLink href="#">Contacto</FooterLink>
+                                <FooterLink href="/nuestra-historia">Nuestra Historia</FooterLink>
+                                <FooterLink href="/posts">Blog</FooterLink>
                             </ul>
                         </div>
 
@@ -133,11 +131,11 @@ export default function Footer() {
                                 Explora
                             </h5>
                             <ul className="space-y-3">
-                                <FooterLink href="#">Lugares Turísticos</FooterLink>
-                                <FooterLink href="#">Rutas y Senderos</FooterLink>
-                                <FooterLink href="#">Monumentos</FooterLink>
-                                <FooterLink href="#">Dónde Dormir</FooterLink>
-                                <FooterLink href="#">Dónde Comer</FooterLink>
+                                <FooterLink href="/places">Lugares Turísticos</FooterLink>
+                                {/*<FooterLink href="#">Rutas y Senderos</FooterLink>*/}
+                                {/*<FooterLink href="#">Monumentos</FooterLink>*/}
+                                <FooterLink href="/hotels">Dónde Dormir</FooterLink>
+                                <FooterLink href="/restaurants">Dónde Comer</FooterLink>
                             </ul>
                         </div>
 
