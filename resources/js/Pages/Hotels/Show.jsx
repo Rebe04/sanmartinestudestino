@@ -7,12 +7,15 @@ import AmenitiesList from "@/Components/AmenitiesList.jsx";
 import HotelMap from "@/Components/Hotels/HotelMap.jsx";
 import SocialIcon from "@/Components/Utils/SocialIcon.jsx";
 import ReviewsList from "@/Components/Utils/ReviewsList.jsx";
+import React from "react";
+import {Head} from "@inertiajs/react";
 
-export default function Index({hotel, reviews}) {
+export default function Show({hotel, reviews}) {
     const totalStars = 5;
     const fullStars = Math.round(hotel.reviews_avg_rating || 0);
     return(
-        <MainLayout>
+        <>
+            <Head title={`${hotel.name}`} />
             <div>
                 <div className={`flex flex-col relative items-center justify-center pt-smd-104 w-full h-smd-496`} style={{ backgroundImage: `url(${blogImage})`, backgroundSize: 'cover'}}>
                     <div className="absolute top-0 w-full h-smd-496 bg-smd-dark opacity-75"></div>
@@ -88,6 +91,8 @@ export default function Index({hotel, reviews}) {
                 </div>
 
             </div>
-        </MainLayout>
+        </>
     )
 }
+
+Show.layout = page => <MainLayout children={page} title="Hotel:" />;
