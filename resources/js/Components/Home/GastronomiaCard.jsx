@@ -12,10 +12,18 @@ export default function GastronomiaCard({item}) {
                         <h4 className="text-sm font-bold text-smd-8 text-gray-800">{item.name}</h4>
                         <p className="text-gray-500 text-sm mt-1">{item.food_category.name}</p>
                     </div>
-                    <div className="flex-shrink-0 flex items-center gap-1 bg-green-100 text-green-800 font-bold text-sm px-3 py-1 rounded-full">
-                        <StarIcon className="w-4 h-4" />
-                        <span>{parseFloat(item.reviews_avg_rating).toFixed(1)}</span>
-                    </div>
+                    {item.reviews_avg_rating ? (
+                        <div className="flex-shrink-0 flex items-center gap-1 bg-green-100 text-smd-soft-green font-bold text-sm px-3 py-1 rounded-full">
+                            <StarIcon className="w-4 h-4" />
+                            <span>{parseFloat(item.reviews_avg_rating).toFixed(1)}</span>
+                        </div>
+                    ):(
+                        <div className="flex-shrink-0 flex items-center gap-1 bg-green-100 text-smd-gray-text font-bold text-sm px-3 py-1 rounded-full">
+                            <StarIcon className="w-4 h-4" />
+                            <span>0</span>
+                        </div>
+                    )}
+
                 </div>
             </div>
         </div>

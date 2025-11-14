@@ -1,0 +1,1 @@
+import{j as i}from"./app-C57xz3Px.js";import{M as t}from"./MainLayout-Ck_r4fQa.js";import"./logoWhite-C0-n3M0p.js";import"./NavLink-CRM9Z5RV.js";function a({event_category:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{a as default};

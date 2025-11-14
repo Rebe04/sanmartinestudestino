@@ -37,12 +37,12 @@ export default function DondeDormir({hotels}){
                                         }</p>
                                     </div>
                                     <div className="flex-1 flex flex-col justify-end items-end">
-                                        <p className="text-smd-dark text-3xl">{hotel.precioPorNoche}K</p>
+                                        <p className="text-smd-dark text-xl">{hotel.precioPorNoche}</p>
                                         <span className="text-smd-gray-text text-smd-16">/noche</span>
                                     </div>
                                 </div>
                                 <div className="py-smd-16 px-smd-16 w-full flex justify-center">
-                                    <Link href="#" className="bg-gray-100 w-full block text-smd-dark font-semibold transition duration-300 ease-in-out rounded-full hover:bg-smd-soft-green  py-smd-8 text-center hover:text-white">
+                                    <Link href={route('hotels.show', hotel)} className="bg-gray-100 w-full block text-smd-dark font-semibold transition duration-300 ease-in-out rounded-full hover:bg-smd-soft-green  py-smd-8 text-center hover:text-white">
                                         Ver Más
                                     </Link>
                                 </div>
