@@ -58,6 +58,7 @@ class HomeController extends Controller
             'subevent.tags'
         ])
             ->where('starts_at', '>=', now()->toDateString())
+            ->orWhere('finishes_at', '>=', now()->toDateString())
             ->orderBy('starts_at', 'asc')
             ->first();
 

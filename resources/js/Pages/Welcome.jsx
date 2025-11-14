@@ -18,7 +18,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion, posts, resta
             <RoutesSection/>
             <DondeComer restaurants={restaurants.data} />
             <DondeDormir hotels={hotels.data}/>
-            <NextEvent eventData={nextEvent.data}/>
+            {nextEvent && <NextEvent eventData={nextEvent.data} />}
         </div>
     );
 }

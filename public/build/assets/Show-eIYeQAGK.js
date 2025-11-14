@@ -1,0 +1,1 @@
+import{j as i}from"./app-CtD3JAGc.js";import{M as t}from"./MainLayout-0RjUE2AK.js";import"./logoWhite-C0-n3M0p.js";import"./NavLink-MSgPehj5.js";function a({food_category:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{a as default};
