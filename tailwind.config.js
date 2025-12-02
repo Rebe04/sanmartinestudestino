@@ -15,6 +15,7 @@ export default {
             "smd-max": "1320px",
             "smd-max-lg": "1080px",
             "smd-300": "300px",
+            "smd-600": "600px",
         },
         extend: {
             animation: {
@@ -44,6 +45,11 @@ export default {
                 "smd-green": "#2e6230",
                 "smd-soft-green": "#16a34a",
                 "smd-yellow": "#f6c132",
+                christmas: {
+                    DEFAULT: '#008d4b',
+                    dark: '#007a40',
+                    light: '#e5f4ed',
+                }
             },
             typography: ({ theme }) => ({
                 DEFAULT: {

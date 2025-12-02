@@ -14,6 +14,7 @@ use App\Http\Controllers\PostCategoryController;
 use App\Http\Controllers\CuadrillasController;
 use App\Http\Controllers\MonumentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NavidadController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -64,6 +65,8 @@ Route::get('/cuadrillas',[CuadrillasController::class, 'index'])->name('cuadrill
 Route::get('/monuments',[MonumentController::class, 'index'])->name('monuments');
 
 Route::get('/contactanos',[ContactController::class, 'index'])->name('contact-us');
+
+Route::get('/navidad', [NavidadController::class, 'index'])->name('navidad.index');
 
 
 Route::middleware('auth')->group(function () {
