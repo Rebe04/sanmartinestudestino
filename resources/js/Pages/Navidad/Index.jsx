@@ -58,31 +58,27 @@ export default function Index() {
     };
 
     return (
-        // FONDO GENERAL: Gris muy claro para dar limpieza y modernidad.
-        // Usamos font-sans que ahora es Poppins.
         <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4 font-sans antialiased">
             <Head title="Modo Navidad" />
 
-            {/* TARJETA PRINCIPAL: Blanca, con sombra suave y bordes redondeados */}
-            <div className="bg-white w-full max-w-lg rounded-3xl shadow-xl overflow-hidden my-8">
+            {/* Tarjeta Principal */}
+            <div className="bg-white w-full max-w-lg rounded-3xl shadow-xl overflow-hidden my-4 sm:my-8 max-h-[90vh] flex flex-col">
 
-                {/* --- ENCABEZADO VERDE SÓLIDO --- */}
-                {/* Aquí solucionamos el problema del logo blanco. Este bloque usa tu verde corporativo. */}
-                <div className="bg-christmas py-8 px-6 text-center relative overflow-hidden">
-                    {/* Decoración sutil de fondo (opcional) */}
+                {/* Encabezado Verde */}
+                <div className="bg-christmas py-6 px-6 text-center relative overflow-hidden flex-shrink-0">
                     <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/images/bg-pattern.png')] bg-repeat mix-blend-overlay"></div>
 
-                    <img src={logo} alt="Logo" className="h-14 mx-auto mb-4 relative z-10" />
-                    <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative z-10 flex items-center justify-center gap-2">
-                        Modo Navidad <SparklesIcon className="h-8 w-8 text-amber-300" />
+                    <img src={logo} alt="Logo" className="h-12 sm:h-14 mx-auto mb-3 relative z-10" />
+                    <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1 relative z-10 flex items-center justify-center gap-2">
+                        Modo Navidad <SparklesIcon className="h-6 w-6 sm:h-8 sm:w-8 text-amber-300" />
                     </h1>
-                    <p className="text-christmas-light text-sm sm:text-base relative z-10 font-medium">
-                        Crea tu foto de perfil oficial de San Martín.
+                    <p className="text-christmas-light text-xs sm:text-sm relative z-10 font-medium">
+                        Crea tu foto de perfil oficial.
                     </p>
                 </div>
 
-                {/* --- CUERPO DE LA TARJETA (Fondo Blanco) --- */}
-                <div className="p-6 sm:p-8 text-gray-700">
+                {/* Cuerpo de la Tarjeta (Scrollable) */}
+                <div className="p-6 sm:p-8 text-gray-700 overflow-y-auto custom-scrollbar">
 
                     {/* --- PASO 1: Subir Foto --- */}
                     {!imageSrc && !finalImage && (
@@ -97,19 +93,20 @@ export default function Index() {
                                 <PhotoIcon className="w-12 h-12 text-christmas" />
                             </div>
                             <p className="font-bold text-xl text-gray-800">Sube tu foto aquí</p>
-                            <p className="text-gray-500 mt-2 text-sm">Recomendamos una selfie o primer plano con buena luz.</p>
+                            <p className="text-gray-500 mt-2 text-sm">Recomendamos una selfie o primer plano.</p>
                         </div>
                     )}
 
                     {/* --- PASO 2: Recortar Foto --- */}
                     {imageSrc && (
                         <div className="flex flex-col items-center animate-fade-in">
-                            <p className="mb-4 text-gray-600 text-sm font-medium flex items-center gap-1">
+                            <p className="mb-4 text-gray-600 text-sm font-medium flex items-center gap-1 text-center">
                                 <ArrowPathIcon className="h-4 w-4 animate-spin" /> Arrastra y haz zoom para ajustar tu cara en el círculo
                             </p>
 
-                            {/* Contenedor del Cropper con borde verde suave */}
-                            <div className="relative w-full max-w-[350px] aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-inner border-4 border-christmas/20 mb-5 mx-auto">
+                            {/* CONTENEDOR DEL CROPPER */}
+                            {/* Limitamos el ancho máximo para que quepa en pantallas pequeñas */}
+                            <div className="relative w-full max-w-[300px] sm:max-w-[350px] aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-inner border-4 border-christmas/20 mb-5 mx-auto">
                                 <Cropper
                                     image={imageSrc}
                                     crop={crop}
@@ -122,6 +119,20 @@ export default function Index() {
                                     onZoomChange={setZoom}
                                     objectFit="cover"
                                     minZoom={1}
+                                    style={{
+                                        containerStyle: {
+                                            width: '100%',
+                                            height: '100%',
+                                        },
+                                        mediaStyle: {
+                                            maxWidth: 'none',
+                                            maxHeight: 'none',
+                                            width: 'auto',
+                                            height: '100%',
+                                            display: 'block'
+                                        }
+                                    }}
+                                    // -------------------------------------------------------
                                 />
                                 {/* Overlay del Marco */}
                                 <div className="absolute inset-0 pointer-events-none z-10">
@@ -129,8 +140,8 @@ export default function Index() {
                                 </div>
                             </div>
 
-                            {/* Control de Zoom - Estilo más limpio */}
-                            <div className="w-full max-w-[350px] mb-8 flex items-center gap-4 px-2">
+                            {/* Control de Zoom */}
+                            <div className="w-full max-w-[300px] sm:max-w-[350px] mb-8 flex items-center gap-4 px-2">
                                 <span className="text-xs font-bold uppercase text-gray-500">Zoom</span>
                                 <input
                                     type="range"
@@ -139,7 +150,6 @@ export default function Index() {
                                     max={3}
                                     step={0.01}
                                     onChange={(e) => setZoom(Number(e.target.value))}
-                                    // Usamos accent-christmas para que la barra sea del color corporativo
                                     className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-christmas"
                                 />
                             </div>
@@ -154,7 +164,6 @@ export default function Index() {
                                 <button
                                     onClick={generateImage}
                                     disabled={loading}
-                                    // Botón principal verde sólido
                                     className="flex-1 py-3.5 rounded-xl bg-christmas text-white font-bold text-sm shadow-md hover:bg-christmas-dark hover:shadow-lg transition-all disabled:opacity-50 flex justify-center items-center gap-2"
                                 >
                                     {loading ? (
@@ -173,12 +182,10 @@ export default function Index() {
                             <h3 className="text-2xl font-bold mb-2 text-gray-800">¡Resultado espectacular!</h3>
                             <p className="text-gray-600 mb-6 text-sm">Ya puedes guardar y compartir tu espíritu navideño.</p>
 
-                            {/* Vista previa con sombra elegante */}
-                            <div className="relative w-full max-w-[350px] mx-auto aspect-square rounded-2xl overflow-hidden shadow-2xl mb-8 bg-gray-50">
+                            <div className="relative w-full max-w-[300px] sm:max-w-[350px] mx-auto aspect-square rounded-2xl overflow-hidden shadow-2xl mb-8 bg-gray-50">
                                 <img src={finalImage} alt="Resultado Navideño" className="w-full h-full object-contain" />
                             </div>
 
-                            {/* Botón de descarga principal verde */}
                             <button
                                 onClick={downloadImage}
                                 className="w-full max-w-[400px] mx-auto py-4 rounded-xl bg-christmas text-white font-bold text-lg shadow-lg hover:bg-christmas-dark hover:shadow-xl transition flex items-center justify-center gap-3 animate-bounce"
