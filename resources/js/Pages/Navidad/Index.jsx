@@ -4,9 +4,11 @@ import Cropper from 'react-easy-crop';
 import { getCroppedImg } from '@/Utils/canvasUtils';
 import { ArrowDownTrayIcon, PhotoIcon, ArrowPathIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import logo from '../../assets/images/logoWhite.png';
+import logoNavidad from '../../assets/images/logo-navidad.png';
 import MainLayout from "@/Layouts/MainLayout.jsx";
 
 const FRAME_URL = '/images/marco-navidad.png';
+
 
 export default function Index() {
     const [imageSrc, setImageSrc] = useState(null);
@@ -69,7 +71,10 @@ export default function Index() {
                 <div className="bg-christmas py-6 px-6 text-center relative overflow-hidden flex-shrink-0">
                     <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/images/bg-pattern.png')] bg-repeat mix-blend-overlay"></div>
 
-                    <img src={logo} alt="Logo" className="h-12 sm:h-14 mx-auto mb-3 relative z-10" />
+                    <div className="flex justify-center items-center gap-smd-16">
+                        <img src={logo} alt="Logo" className="h-12 sm:h-14 mb-3 relative z-10" />
+                        <img src={logoNavidad} alt="Logo" className="h-12 sm:h-14 mb-3 relative border-l pl-smd-16 z-10" />
+                    </div>
                     <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1 relative z-10 flex items-center justify-center gap-2">
                         Modo Navidad <SparklesIcon className="h-6 w-6 sm:h-8 sm:w-8 text-amber-300" />
                     </h1>
