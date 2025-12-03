@@ -4,6 +4,7 @@ import Cropper from 'react-easy-crop';
 import { getCroppedImg } from '@/Utils/canvasUtils';
 import { ArrowDownTrayIcon, PhotoIcon, ArrowPathIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import logo from '../../assets/images/logoWhite.png';
+import MainLayout from "@/Layouts/MainLayout.jsx";
 
 const FRAME_URL = '/images/marco-navidad.png';
 
@@ -212,3 +213,5 @@ export default function Index() {
         </div>
     );
 }
+
+Index.layout = page => <MainLayout children={page} title="Hotel:" />;
