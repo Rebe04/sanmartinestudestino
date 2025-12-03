@@ -1,1 +1,0 @@
-import{j as i}from"./app-DY_ShhYh.js";import{M as t}from"./MainLayout-rHyLCP9U.js";import"./logoWhite-C0-n3M0p.js";import"./NavLink-DIZ7FSSb.js";function a({food_category:r}){return i.jsx(t,{children:i.jsxs("div",{children:[i.jsx("h1",{children:"Lista de Eventos"}),JSON.stringify(r,null,2)]})})}export{a as default};

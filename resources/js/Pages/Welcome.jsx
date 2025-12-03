@@ -8,12 +8,14 @@ import DondeDormir from "@/Components/Home/DondeDormir.jsx";
 import NextEvent from "@/Components/Home/NextEvent.jsx";
 import PostsSection from "@/Components/Home/PostsSection.jsx";
 import React from "react";
+import NavidadSection from "@/Components/Home/NavidadSection.jsx";
 
 export default function Welcome({ auth, laravelVersion, phpVersion, posts, restaurants, nextEvent, hotels }) {
     return (
         <div>
             <Banner/>
             <AboutSection/>
+            <NavidadSection/>
             <PostsSection posts={posts} />
             <RoutesSection/>
             <DondeComer restaurants={restaurants.data} />
