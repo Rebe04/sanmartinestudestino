@@ -65,7 +65,7 @@ export default function Index() {
             <Head title="Modo Navidad" />
 
             {/* Tarjeta Principal */}
-            <div className="bg-white w-full xl:w-1/2 max-w-lg rounded-3xl shadow-xl overflow-hidden my-smd-120 max-h-[90vh] flex flex-col">
+            <div className="bg-white w-full xl:w-1/2 max-w-lg rounded-3xl shadow-xl overflow-hidden mt-smd-120 max-h-[90vh] flex flex-col">
 
                 {/* Encabezado Verde */}
                 <div className="bg-christmas py-6 px-6 text-center relative overflow-hidden flex-shrink-0">
