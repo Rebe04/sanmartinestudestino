@@ -9,6 +9,14 @@ class NavidadController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Navidad/Index');
+        $ogImage = asset('images/seo/navidad_mini.webp');
+        return Inertia::render('Navidad/Index',
+        [
+            'seo' => [
+                'title' => "Marco Navideño",
+                'description' => "Crea tu marco navideño y vive la navidad con nosotros. San Martín es tu destino",
+                'image' => $ogImage
+            ]
+        ]);
     }
 }
